@@ -50,10 +50,21 @@ map("n", "<C-j>", "<C-w><C-j>", "Navigate windows down")
 map("n", "<C-k>", "<C-w><C-k>", "Navigate windows up")
 map("n", "<C-l>", "<C-w><C-l>", "Navigate windows to the right")
 
+-- Resize with arrows
+map("n", "<C-Up>", ":resize +2<CR>")
+map("n", "<C-Down>", ":resize -2<CR>")
+map("n", "<C-Left>", ":vertical resize +2<CR>")
+map("n", "<C-Right>", ":vertical resize -2<CR>")
+
+-- GIT
+map("n", "<leader>hb", "<cmd>Gitsigns toggle_current_line_blame<CR>")
+
 -- Navigate buffers
 map("n", "<S-l>", ":bnext<CR>")
 map("n", "<S-h>", ":bprevious<CR>")
 
+-- Diagnostic keymaps
+map('n', 'gx', vim.diagnostic.open_float, "Show diagnostics under cursor")
 
 -- Stay in indent mode
 map("v", "<", "<gv")
