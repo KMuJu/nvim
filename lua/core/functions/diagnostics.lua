@@ -1,6 +1,6 @@
 local M = {}
 
-M.show = false 
+M.show = true
 
 M.signs = { Error = "E ", Warn = " ", Hint = "H ", Info = " " }
 
@@ -43,14 +43,11 @@ M.diag2 = {
 
 function M.change()
     if M.show then
-        -- vim.diagnostic.config(M.diag1)
+        vim.diagnostic.config(M.diag1)
         M.show = false 
-        vim.cmd("norm! j")
-        vim.cmd("norm! k")
     else
-        -- vim.diagnostic.config(M.diag1)
+        vim.diagnostic.config(M.diag2)
         M.show = true
-        vim.diagnostic.open_float(nil, {focus=false})
     end
 
 end
