@@ -14,7 +14,6 @@ return {
         local luasnip = require("luasnip")
 
         require("luasnip/loaders/from_vscode").lazy_load()
----@diagnostic disable-next-line: missing-fields
         cmp.setup({ snippet = {
                 expand = function(args)
                     luasnip.lsp_expand(args.body)

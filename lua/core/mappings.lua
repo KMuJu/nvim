@@ -20,6 +20,7 @@ map("n", "<C-d>", "<C-d>zz", "Move half page and center")
 -- Run file
 map("n", "<F5>", "<cmd>:lua require('core.filefunctions').runFile()<CR>", "run file")
 
+
 -- Format file
 map("n", "<leader>f", vim.lsp.buf.format)
 
@@ -57,22 +58,23 @@ map("n", "<C-Left>", ":vertical resize +2<CR>")
 map("n", "<C-Right>", ":vertical resize -2<CR>")
 
 -- GIT
-map("n", "<leader>hb", "<cmd>Gitsigns toggle_current_line_blame<CR>")
+map("n", "<leader>hb", "<cmd>Gitsigns toggle_current_line_blame<CR>", "Toggle line blame")
 
 -- Navigate buffers
 map("n", "<S-l>", ":bnext<CR>")
 map("n", "<S-h>", ":bprevious<CR>")
 
 -- Diagnostic keymaps
-map('n', 'gx', vim.diagnostic.open_float, "Show diagnostics under cursor")
+map('n', 'gx', function() vim.diagnostic.open_float(nil, {focus=false})end, "Show diagnostics under cursor")
 
 -- Stay in indent mode
 map("v", "<", "<gv")
 map("v", ">", ">gv")
 
+--diagnostics
+map("n", "<leader>i", "<cmd>:lua require('core.functions.diagnostics').change()<CR>", "Change diagnostics")
 
-map("n", "<leader>i", "<cmd>:lua require('core.functions.diagnostics').change()<CR>", "Toggle diagnostic window")
--- vim.api.nvim_set_keymap("n", "<leader>i", ":lua vim.diagnostic.open_float(nil, {focus=false})<CR>", {})
+
 -------------
 -- HARPOON --
 -------------
