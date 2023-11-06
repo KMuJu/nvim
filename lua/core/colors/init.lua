@@ -16,5 +16,6 @@ local function get_if_available(colors)
 end
 
 local custom = get_if_available("core.colors.custom")
+-- local custom = get_if_available("gruvbox")
 return custom
 

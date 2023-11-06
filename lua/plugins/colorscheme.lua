@@ -6,9 +6,9 @@ return {
             local colors = require("core.colors")
             require('rose-pine').setup({
                 --- @usage 'auto'|'main'|'moon'|'dawn'
-                variant = 'main',
+                variant = 'moon',
                 --- @usage 'main'|'moon'|'dawn'
-                dark_variant = 'main',
+                dark_variant = 'moon',
                 bold_vert_split = false,
                 dim_nc_background = false,
                 disable_background = false,
@@ -23,5 +23,12 @@ return {
                 highlight_groups = colors.highlight_groups
             })
         end
+    },
+    {
+        "ellisonleao/gruvbox.nvim",
+        name = 'gruvbox',
+        priority = 1000,
+        config = true,
+        opts = ...
     },
 }
