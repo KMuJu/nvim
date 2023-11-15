@@ -15,7 +15,7 @@ local function get_if_available(colors)
 	return rose_pine
 end
 
-local custom = get_if_available("core.colors.custom")
+local custom = get_if_available("core.colors.customGruvbox")
 -- local custom = get_if_available("gruvbox")
 return custom
 

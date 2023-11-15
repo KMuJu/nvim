@@ -22,6 +22,7 @@ return {
             "html",
             "cssls",
             "cmake",
+            "bashls"
         }
         require("mason").setup()
         require("mason-lspconfig").setup({

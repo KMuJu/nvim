@@ -18,6 +18,25 @@ local pale_yellow2          = "#EDCC8E"
 local yellow                = "#F7F06F"
 
 
+-- GRUVBOX
+local bg        = "#282828"
+local fg        = "#ebdbb2"
+local red1      = "#cc241d"
+local red2      = "#fb4934"
+local green1    = "#98971a"
+local green2    = "#b8bb26"
+local yellow1   = "#d79921"
+local yellow2   = "#fabd2f"
+local blue1     = "#458588"
+local blue2     = "#83a598"
+local purple1   = "#b16286"
+local purple2   = "#d3869b"
+local aqua1     = "#689d6a"
+local aqua2     = "#8ec07c"
+local gray1     = "#a89984"
+local gray2     = "#928374"
+
+
 
 return {
     groups = {
