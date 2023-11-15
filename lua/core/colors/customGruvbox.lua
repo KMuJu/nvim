@@ -69,6 +69,6 @@ return {
         ['@property'] = { fg = 'foam' },
         ['@parameter'] = { fg = fg, italic = true },
         ['String'] = { fg = green2, bold = false},
-
+        ['DashboardHeader'] = { fg = red2},
     }
 }

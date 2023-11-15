@@ -4,8 +4,18 @@ return {
     config = function()
         require('dashboard').setup {
             -- config
-            -- theme = "hyper",
+            theme = "hyper",
             config = {
+                header = {
+                    '                                        ▟▙            ',
+                    '                                        ▝▘            ',
+                    '██▃▅▇█▆▖  ▗▟████▙▖   ▄████▄   ██▄  ▄██  ██  ▗▟█▆▄▄▆█▙▖',
+                    '██▛▔ ▝██  ██▄▄▄▄██  ██▛▔▔▜██  ▝██  ██▘  ██  ██▛▜██▛▜██',
+                    '██    ██  ██▀▀▀▀▀▘  ██▖  ▗██   ▜█▙▟█▛   ██  ██  ██  ██',
+                    '██    ██  ▜█▙▄▄▄▟▊  ▀██▙▟██▀   ▝████▘   ██  ██  ██  ██',
+                    '▀▀    ▀▀   ▝▀▀▀▀▀     ▀▀▀▀       ▀▀     ▀▀  ▀▀  ▀▀  ▀▀',
+                    '',
+                },
                 shortcut = {
                     { desc = '󰊳 Update', group = '@property', action = 'Lazy update', key = 'u' },
                     {
@@ -19,7 +29,7 @@ return {
                 },
                 project = { enable = false },
                 packages = { enable = true },
-                mru = { limit = 5, icon = '', label = 'Latest files', cwd_only = true },
+                mru = { limit = 3, icon = '', label = 'Latest files', cwd_only = true },
                 footer = {},
             }
         }
