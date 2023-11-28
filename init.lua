@@ -1,4 +1,5 @@
 vim.o.termguicolors = true
+vim.o.linebreak = true
 require("core.lazy")
 
 require("core.mappings")
