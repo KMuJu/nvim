@@ -28,6 +28,7 @@ map("n", "<leader>f", vim.lsp.buf.format)
 map({"n", "v"}, "<leader>y", [["+y]])
 map("n", "<leader>Y", [["+Y]])
 map({"n", "v"}, "<leader>d", [["_d]])
+-- move lines
 map("v", "J", ":m '>+1<CR>gv=gv")
 map("v", "K", ":m '<-2<CR>gv=gv")
 
@@ -90,3 +91,9 @@ map("n", "<leader>ho", function() require("harpoon.ui").nav_prev() end, "Open pr
 -- cellular automata
 map("n", "<leader>fmr", "<cmd>CellularAutomaton make_it_rain<CR>", "Make it rain")
 map("n", "<leader>fml", "<cmd>CellularAutomaton game_of_life<CR>", "Game of life")
+
+
+map("n", "<C-Up>", ":resize +2<CR>")
+map("n", "<C-Down>", ":resize -2<CR>")
+map("n", "<C-Left>", ":vertical resize +2<CR>")
+map("n", "<C-Right>", ":vertical resize -2<CR>")
