@@ -2,7 +2,7 @@ local M = {}
 
 function M.runFile()
 	if vim.bo.filetype == "python" then
-		vim.cmd(":w")
+		vim.cmd(":wa")
 		vim.cmd(":term clear;python %")
 	end
 
