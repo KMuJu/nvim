@@ -8,3 +8,8 @@ require("core.options")
 
 local colorscheme = require("helpers.theme")
 vim.cmd.colorscheme(colorscheme)
+
+vim.opt.foldmethod = "expr"
+vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
+vim.opt.foldenable = false
+vim.opt.foldlevel = 99
