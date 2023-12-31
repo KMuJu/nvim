@@ -9,6 +9,7 @@ return {
         "hrsh7th/cmp-nvim-lsp",
     },
     config = function()
+        local status, lsp = pcall(require, "lspconfig")
         local servers = {
             "lua_ls",
             "pylsp",
@@ -22,7 +23,8 @@ return {
             "html",
             "cssls",
             "cmake",
-            "bashls"
+            "bashls",
+            "ocamllsp",
         }
         require("mason").setup()
         require("mason-lspconfig").setup({
@@ -151,7 +153,7 @@ return {
 					},
 				},
 			})
-            
+
             require("lspconfig")["clangd"].setup({
 				on_attach = function(client, bufnr)
 					client.server_capabilities.signatureHelpProvider = false
@@ -159,6 +161,13 @@ return {
 				end,
 			})
 
+            require("lspconfig")["ocamllsp"].setup({
+                cmd = { "ocamllsp" },
+                filetypes = { "ocaml", "ocaml.menhir", "ocaml.interface", "ocaml.ocamllex", "reason", "dune" },
+                root_dir = lsp.util.root_pattern("*.opam", "esy.json", "package.json", ".git", "dune-project", "dune-workspace"),
+                on_attach = on_attach,
+                capabilities = capabilities
+            })
 
 
     end
