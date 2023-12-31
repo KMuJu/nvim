@@ -10,8 +10,8 @@ return {
 				defaults = {
 					mappings = {
 						i = {
-							["<C-u>"] = false,
-							["<C-d>"] = false,
+							-- ["<C-u>"] = false,
+							-- ["<C-d>"] = false,
 						},
 					},
 				},
@@ -23,8 +23,10 @@ return {
             local map = require("helpers.keys").map
             local t = require("telescope.builtin")
 
-            map("n", "<leader>sf", require("telescope.builtin").find_files, "Find files")
-            map("n", "<leader>sw", require("telescope.builtin").live_grep, "Find files")
+            map("n", "<leader>sf", t.find_files, "Find files")
+            map("n", "<leader>sw", t.live_grep, "Find word")
+            map("n", "<leader>sb", t.buffers, "Find buffers")
+            map("n", "<leader>sd", t.diagnostics, "Find diagnostics")
 
     end
 }
