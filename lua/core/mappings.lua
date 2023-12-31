@@ -60,6 +60,7 @@ map("n", "<C-Right>", ":vertical resize -2<CR>")
 
 -- GIT
 map("n", "<leader>hb", "<cmd>Gitsigns toggle_current_line_blame<CR>", "Toggle line blame")
+map("n", "<leader>G", vim.cmd.Git, "Open git fugitive")
 
 -- Navigate buffers
 map("n", "<S-l>", ":bnext<CR>")
