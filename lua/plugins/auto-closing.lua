@@ -7,31 +7,30 @@ return {
 
             conf.pair("'", {
                 close = "'",
-                should_expand = R.any_of(
-                    R.end_of_context "[a-zA-z0-9\\s]",
-                    R.not_(R.start_of_context "[a-zA-z0-9]"),
+                should_expand = R.all_of(
+                    R.not_(R.end_of_context "[a-zA-z0-9]"),
                     R.not_(R.child_of_node {"string"})
                 )
             })
             conf.pair('"', {
                 close = '"',
-                should_expand = R.any_of(
-                    R.end_of_context "[a-zA-z0-9\\s]",
-                    R.not_(R.start_of_context "[a-zA-z0-9]"),
+                should_expand = R.all_of(
+                    R.not_(R.end_of_context "[a-zA-z0-9]"),
                     R.not_(R.child_of_node {"string"})
                 )
             })
             conf.pair("(", {
                 close = ")",
-                should_expand = R.any_of(
-                    R.end_of_context "[a-zA-z0-9]"
-                    -- R.not_(R.start_of_context "[a-zA-z0-9]")
+                should_expand = R.all_of(
+                    R.not_(R.end_of_context "[a-zA-z0-9]"),
+                    R.not_(R.child_of_node {"string"})
                 )
             })
             conf.pair("{", {
                 close = "}",
-                should_expand = R.any_of(
-                    R.end_of_context "[a-zA-z0-9]"
+                should_expand = R.all_of(
+                    R.not_(R.end_of_context "[a-zA-z0-9]"),
+                    R.not_(R.child_of_node {"string"})
                 )
             })
         end)
