@@ -75,6 +75,9 @@ map("v", ">", ">gv")
 --diagnostics
 map("n", "<leader>i", "<cmd>:lua require('core.functions.diagnostics').change()<CR>", "Change diagnostics")
 
+-- Oil
+map("n", "<leader>o", "<cmd>Oil<CR>", "Open oil in parent dir")
+
 
 -------------
 -- HARPOON --
