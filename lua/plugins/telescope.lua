@@ -8,20 +8,8 @@ return {
 		{ "nvim-telescope/telescope-fzf-native.nvim", build = "make", cond = vim.fn.executable("make") == 1 },
 	},
 	config = function()
-		local Layout = require("nui.layout")
-		local Popup = require("nui.popup")
 
 		local telescope = require("telescope")
-		local TSLayout = require("telescope.pickers.layout_strategies")
-
-		local function make_popup(options)
-			local popup = Popup(options)
-			function popup.border:change_title(title)
-				popup.border.set_text(popup.border, "top", title)
-			end
-
-			return TSLayout.Window(popup)
-		end
 
 		telescope.setup({
 			defaults = {
