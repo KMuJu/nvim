@@ -28,9 +28,12 @@ return {
 
 			local map = require("helpers.keys").map
 			map("n", "<leader>cs", function()
+                -- This updates rose-pine and sets colorscheme
+                -- Breaks nvim-colorizer for some reason
 				colors.switch()
 				vim.cmd("Lazy reload rose-pine")
 				vim.cmd.colorscheme(require("helpers.theme"))
+				-- vim.cmd("Lazy reload nvim-colorizer.lua")
                 print("Switched colors")
 			end, "Switch custom colorscheme")
 		end,

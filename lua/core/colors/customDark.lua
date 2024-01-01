@@ -10,8 +10,10 @@ local red2      = "#fb4934"
 local red3      = "#e83d27"
 local green1    = "#98971a"
 local green2    = "#b8bb26"
+local green3    = "#6cb310"
 local yellow1   = "#d79921"
 local yellow2   = "#fabd2f"
+local yellow3   = "#edc44a"
 local blue1     = "#458588"
 local blue2     = "#83a598"
 local blue3     = "#91b6f2"
@@ -23,13 +25,16 @@ local aqua2     = "#8ec07c"
 local gray1     = "#a89984"
 local gray2     = "#928374"
 
+-- local visual    = "#8395a3"
+local visual    = "#a39d83"
+
 
 local custom =  {
     groups = {
-        background = bg0_h,
-        background_nc = bg0_h,
-        panel = bg0_h,
-        panel_nc = bg0_h,
+        background = bg_dark,
+        background_nc = bg_dark,
+        panel = bg_dark,
+        panel_nc = bg_dark,
         border = fg,
         comment = 'muted',
         link = red2,
@@ -64,7 +69,7 @@ local custom =  {
         Function = { fg = blue3 },
         -- local and such
         Statement = { fg = red1 },
-        Keyword = { fg = red3 },
+        Keyword = { fg = purple3 },
 
         DiagnosticStatusLineHint = {fg = 'love'},
         Type = { fg = green2 },
@@ -72,8 +77,11 @@ local custom =  {
         ['@field'] = { fg = 'foam'},
         ['@property'] = { fg = 'foam' },
         ['@parameter'] = { fg = fg, italic = true },
-        ['String'] = { fg = green2, bold = false},
+        ['String'] = { fg = yellow3, bold = false},
         ['DashboardHeader'] = { fg = red2},
+        ['LspReferenceWrite'] = { bg = gray1, blend = 15},
+        ['LspReferenceRead'] = { bg = gray2, blend = 15},
+        ['Visual'] = { bg = visual, blend = 45},
     }
 }
 

@@ -20,17 +20,17 @@ local dark = get_if_available("core.colors.customDark")
 -- local custom = get_if_available("gruvbox")
 
 local M = {}
-M.custom = gruvBox
 M.all = {
     gruvBox,
     dark,
 }
 
 M.index = 2
+M.custom = M.all[M.index]
 
 M.switch = function ()
-    M.custom = M.all[M.index]
     M.index = (M.index % #M.all) + 1
+    M.custom = M.all[M.index]
 end
 
 return M

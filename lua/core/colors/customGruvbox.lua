@@ -23,11 +23,11 @@ local aqua2     = "#8ec07c"
 local gray1     = "#a89984"
 local gray2     = "#928374"
 
+local visual    = "#a39d83"
 
 local custom =  {
     groups = {
-        -- background = bg0_h,
-        background = bg_dark,
+        background = bg0_h,
         background_nc = bg0_h,
         panel = bg0_h,
         panel_nc = bg0_h,
@@ -75,6 +75,7 @@ local custom =  {
         ['@parameter'] = { fg = fg, italic = true },
         ['String'] = { fg = green2, bold = false},
         ['DashboardHeader'] = { fg = red2},
+        ['Visual'] = { bg = visual, blend = 45},
     }
 }
 
