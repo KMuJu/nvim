@@ -25,6 +25,7 @@ return {
 
 		telescope.setup({
 			defaults = {
+                -- https://github.com/nvim-telescope/telescope.nvim/wiki/Configuration-Recipes#layouts
 				layout_strategy = "flex",
 				layout_config = {
 					horizontal = {
