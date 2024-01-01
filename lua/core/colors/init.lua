@@ -15,7 +15,23 @@ local function get_if_available(colors)
 	return rose_pine
 end
 
-local custom = get_if_available("core.colors.customGruvbox")
+local gruvBox = get_if_available("core.colors.customGruvbox")
+local dark = get_if_available("core.colors.customDark")
 -- local custom = get_if_available("gruvbox")
-return custom
+
+local M = {}
+M.custom = gruvBox
+M.all = {
+    gruvBox,
+    dark,
+}
+
+M.index = 2
+
+M.switch = function ()
+    M.custom = M.all[M.index]
+    M.index = (M.index % #M.all) + 1
+end
+
+return M
 

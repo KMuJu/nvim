@@ -26,8 +26,7 @@ local gray2     = "#928374"
 
 local custom =  {
     groups = {
-        -- background = bg0_h,
-        background = bg_dark,
+        background = bg0_h,
         background_nc = bg0_h,
         panel = bg0_h,
         panel_nc = bg0_h,
@@ -65,7 +64,7 @@ local custom =  {
         Function = { fg = blue3 },
         -- local and such
         Statement = { fg = red1 },
-        Keyword = { fg = purple3 },
+        Keyword = { fg = red3 },
 
         DiagnosticStatusLineHint = {fg = 'love'},
         Type = { fg = green2 },
