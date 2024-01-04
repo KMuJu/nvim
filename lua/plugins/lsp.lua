@@ -63,14 +63,12 @@ return {
         }
         vim.diagnostic.config(config)
 
-
         local on_attach = function(client, bufnr)
             local lsp_map = require("helpers.keys").lsp_map
             lsp_map("<leader>lr", vim.lsp.buf.rename, bufnr, "Rename symbol")
             lsp_map("<leader>la", vim.lsp.buf.code_action, bufnr, "Code action")
             lsp_map("<leader>ld", vim.lsp.buf.type_definition, bufnr, "Type definition")
             lsp_map("<leader>ls", require("telescope.builtin").lsp_document_symbols, bufnr, "Document symbols")
-
 
             lsp_map("gd", vim.lsp.buf.definition, bufnr, "Goto Definition")
             lsp_map("gr", require("telescope.builtin").lsp_references, bufnr, "Goto References")
@@ -89,7 +87,6 @@ return {
             require("illuminate").on_attach(client)
         end
 
-
         local capabilities = vim.lsp.protocol.make_client_capabilities()
         capabilities = require("cmp_nvim_lsp").default_capabilities(capabilities)
 
@@ -100,7 +97,6 @@ return {
                 on_attach = on_attach,
             })
         end
-
 
         -- Lua
         require("lspconfig")["lua_ls"].setup({
@@ -125,50 +121,55 @@ return {
         })
 
         -- Python
-			require("lspconfig")["pylsp"].setup({
-				on_attach = on_attach,
-				capabilities = capabilities,
-				settings = {
-					pylsp = {
-						plugins = {
-							flake8 = {
-								enabled = true,
-								maxLineLength = 88, -- Black's line length
-							},
-							-- Disable plugins overlapping with flake8
-							pycodestyle = {
-								enabled = false,
-							},
-							mccabe = {
-								enabled = false,
-							},
-							pyflakes = {
-								enabled = false,
-							},
-							-- Use Black as the formatter
-							autopep8 = {
-								enabled = false,
-							},
-						},
-					},
-				},
-			})
+        require("lspconfig")["pylsp"].setup({
+            on_attach = on_attach,
+            capabilities = capabilities,
+            settings = {
+                pylsp = {
+                    plugins = {
+                        flake8 = {
+                            enabled = true,
+                            maxLineLength = 88, -- Black's line length
+                        },
+                        -- Disable plugins overlapping with flake8
+                        pycodestyle = {
+                            enabled = false,
+                        },
+                        mccabe = {
+                            enabled = false,
+                        },
+                        pyflakes = {
+                            enabled = false,
+                        },
+                        -- Use Black as the formatter
+                        autopep8 = {
+                            enabled = false,
+                        },
+                    },
+                },
+            },
+        })
 
-            require("lspconfig")["clangd"].setup({
-				on_attach = function(client, bufnr)
-					client.server_capabilities.signatureHelpProvider = false
-					on_attach(client, bufnr)
-				end,
-			})
+        require("lspconfig")["clangd"].setup({
+            on_attach = function(client, bufnr)
+                client.server_capabilities.signatureHelpProvider = false
+                on_attach(client, bufnr)
+            end,
+        })
 
-            require("lspconfig")["ocamllsp"].setup({
-                cmd = { "ocamllsp" },
-                filetypes = { "ocaml", "ocaml.menhir", "ocaml.interface", "ocaml.ocamllex", "reason", "dune" },
-                root_dir = lsp.util.root_pattern("*.opam", "esy.json", "package.json", ".git", "dune-project", "dune-workspace"),
-                on_attach = on_attach,
-                capabilities = capabilities
-            })
-
-
-    end
+        require("lspconfig")["ocamllsp"].setup({
+            cmd = { "ocamllsp" },
+            filetypes = { "ocaml", "ocaml.menhir", "ocaml.interface", "ocaml.ocamllex", "reason", "dune" },
+            root_dir = lsp.util.root_pattern(
+                "*.opam",
+                "esy.json",
+                "package.json",
+                ".git",
+                "dune-project",
+                "dune-workspace"
+            ),
+            on_attach = on_attach,
+            capabilities = capabilities,
+        })
+    end,
 }

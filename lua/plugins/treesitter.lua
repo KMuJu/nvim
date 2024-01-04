@@ -29,7 +29,8 @@ return {
             rainbow = {
                 enable = true,
                 -- disable = { "jsx", "cpp" }, list of languages you want to disable the plugin for
-                extended_mode = true, -- Also highlight non-bracket delimiters like html tags, boolean or table: lang -> boolean
+                disable = {"html"},
+                extended_mode = false, -- Also highlight non-bracket delimiters like html tags, boolean or table: lang -> boolean
                 colors = {
                     "#C9C300",
                     "#AF48AD",
