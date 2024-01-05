@@ -58,7 +58,7 @@ return {
             highlight = { enable = true },
             indent = { enable = true, disable = { "python" } },
             incremental_selection = {
-                enable = true,
+                enable = false,
                 keymaps = {
                     init_selection = "<c-space>",
                     node_incremental = "<c-space>",

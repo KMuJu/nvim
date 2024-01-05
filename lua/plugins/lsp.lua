@@ -82,7 +82,7 @@ return {
             end, { desc = "Format current buffer with LSP" })
 
             lsp_map("<leader>ff", "<cmd>Format<cr>", bufnr, "Format")
-            vim.keymap.set("v", "<leader>fv", vim.lsp.buf.format, { remap = false })
+            require("helpers.keys").map("v", "<leader>fv", vim.lsp.buf.format, "Format selection")
 
             -- Attach and configure vim-illuminate
             require("illuminate").on_attach(client)

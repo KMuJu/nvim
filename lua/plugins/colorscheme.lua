@@ -4,6 +4,7 @@ return {
 	{
 		"rose-pine/neovim",
 		name = "rose-pine",
+        priority = 70,
 		config = function()
 			local groups = colors.custom.groups
 			local highlight_groups = colors.custom.highlight_groups
