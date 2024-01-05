@@ -14,6 +14,7 @@ local green3    = "#6cb310"
 local yellow1   = "#d79921"
 local yellow2   = "#fabd2f"
 local yellow3   = "#edc44a"
+local yellow4   = "#e8d497"
 local blue1     = "#458588"
 local blue2     = "#83a598"
 local blue3     = "#91b6f2"
@@ -72,12 +73,12 @@ local custom =  {
         Keyword = { fg = purple3 },
 
         DiagnosticStatusLineHint = {fg = 'love'},
-        Type = { fg = green2 },
+        Type = { fg = yellow3 },
         Variable = { fg = blue1 },
         ['@field'] = { fg = 'foam'},
         ['@property'] = { fg = 'foam' },
         ['@parameter'] = { fg = fg, italic = true },
-        ['String'] = { fg = yellow3, bold = false},
+        ['String'] = { fg = yellow4, bold = false},
         ['DashboardHeader'] = { fg = red2},
         ['LspReferenceWrite'] = { bg = gray1, blend = 15},
         ['LspReferenceRead'] = { bg = gray2, blend = 15},

@@ -25,5 +25,7 @@ return {
         config = function ()
             require('better-comment').Setup()
         end
-    }
+    },
+    -- yuck eww
+    "elkowar/yuck.vim",
 }

@@ -65,7 +65,7 @@ local custom =  {
         Function = { fg = blue3 },
         -- local and such
         Statement = { fg = red1 },
-        Keyword = { fg = purple3 },
+        Keyword = { fg = red2 },
 
         DiagnosticStatusLineHint = {fg = 'love'},
         Type = { fg = green2 },
