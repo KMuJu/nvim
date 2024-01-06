@@ -1,5 +1,8 @@
 return {
     {
+        "nvim-lua/plenary.nvim"
+    },
+    {
         "NvChad/nvim-colorizer.lua", --color
         config = function ()
         	require("colorizer").setup({'*'})

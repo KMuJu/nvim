@@ -99,3 +99,12 @@ map("n", "<C-Up>", ":resize +2<CR>")
 map("n", "<C-Down>", ":resize -2<CR>")
 map("n", "<C-Left>", ":vertical resize +2<CR>")
 map("n", "<C-Right>", ":vertical resize -2<CR>")
+
+
+-- Run test file
+map("n", "<leader>rt", "<cmd>PlenaryBustedFile %<CR>", "Run test on current file")
+-- map("n", "<leader>rt", function ()
+--     local test = require("mini.test")
+--     test.setup()
+--     test.run_file()
+-- end, "Run test on current file")
