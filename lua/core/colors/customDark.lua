@@ -71,10 +71,16 @@ local custom =  {
         -- local and such
         Statement = { fg = red1 },
         Keyword = { fg = purple3 },
-
         DiagnosticStatusLineHint = {fg = 'love'},
+
+        NormalNC = { bg = bg_dark },                   -- For non-current windows
+        
+        -- Telescope
+        TelescopeMatching = { fg = red2 },
+
         Type = { fg = yellow3 },
         Variable = { fg = blue1 },
+        Float_border = {fg = red1, bg = yellow1},
         ['@field'] = { fg = 'foam'},
         ['@property'] = { fg = 'foam' },
         ['@parameter'] = { fg = fg, italic = true },

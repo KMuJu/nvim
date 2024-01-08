@@ -18,6 +18,8 @@ return {
 				disable_background = false,
 				disable_float_background = false,
 				disable_italics = false,
+                extend_background_behind_borders = false,
+                
 
 				--- @usage string hex value or named color from rosepinetheme.com/palette
 				groups = groups,
