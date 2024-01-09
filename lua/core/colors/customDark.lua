@@ -73,12 +73,17 @@ local custom =  {
         Keyword = { fg = purple3 },
         DiagnosticStatusLineHint = {fg = 'love'},
 
-        NormalNC = { bg = bg_dark },                   -- For non-current windows
+        -- For non-current windows
+        NormalNC = { bg = bg_dark },                   
         
+        -- Oil directory
+        Directory = { fg = blue3, bold = true, italic = true },
+
         -- Telescope
         TelescopeMatching = { fg = red2 },
 
         Type = { fg = yellow3 },
+
         Variable = { fg = blue1 },
         Float_border = {fg = red1, bg = yellow1},
         ['@field'] = { fg = 'foam'},
