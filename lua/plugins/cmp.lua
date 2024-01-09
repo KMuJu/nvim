@@ -60,10 +60,22 @@ return {
 				end, { "i", "s" }),
 			},
 			sources = {
-				{ name = "nvim_lsp" },
-				{ name = "luasnip" },
-				{ name = "buffer" },
-				{ name = "path" },
+				{
+					name = "nvim_lsp",
+                    priority = 70
+				},
+				{
+					name = "luasnip",
+                    priority = 80
+				},
+				{
+					name = "buffer",
+                    priority = 10
+				},
+				{
+					name = "path",
+                    priority = 90
+				},
 			},
 		})
 	end,

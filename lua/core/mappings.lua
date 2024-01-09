@@ -108,3 +108,10 @@ map("n", "<leader>rt", "<cmd>PlenaryBustedFile %<CR>", "Run test on current file
 --     test.setup()
 --     test.run_file()
 -- end, "Run test on current file")
+
+
+-- Nvim scissors
+map("n", "<leader>sne", function() require("scissors").editSnippet() end, "Edit snippet")
+
+-- When used in visual mode prefills the selection as body.
+map({ "n", "x" }, "<leader>sna", function() require("scissors").addNewSnippet() end, "Add new snippet")
