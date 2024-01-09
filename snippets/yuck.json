@@ -1,0 +1,65 @@
+{
+  "box": {
+    "body": [
+      "(box :orientation \"${1: orientation}\"",
+      "    :space-evenly ${2: boolean}",
+      "    $3",
+      ")"
+    ],
+    "prefix": "box"
+  },
+  "label": {
+    "body": "(label :text \"${1:text}\")",
+    "prefix": "label"
+  },
+  "revealer": {
+    "body": [
+      "(revealer",
+      "    :transition \"${1:crossfade}\"",
+      "    :reveal ${2:true}",
+      "    :duration \"${3:200ms}\"",
+      "    $4",
+      ")"
+    ],
+    "prefix": "revealer"
+  },
+  "scale": {
+    "body": [
+      "(scale :orientation \"${1:o}\"",
+      "    :height ${2:h}",
+      "    :flipped ${3:f}",
+      "    :value ${4:v}",
+      "    :min ${5:min}",
+      "    :max ${6:max}",
+      "    :active ${7:a}",
+      "    :class \"${8:c}\"",
+      ")$9"
+    ],
+    "prefix": "scale"
+  },
+  "widget": {
+    "body": [
+      "(defwidget ${1:name} [${2:arguments}]",
+      "  $0",
+      ")"
+    ],
+    "prefix": "widget"
+  },
+  "window": {
+    "body": [
+      "(defwindow ${1:name}",
+      "    :stacking \"${2:fg}\"",
+      "    :windowtype \"${3:dock}\"",
+      "    :wm-ignore ${4:true}",
+      "    :geometry (geometry",
+      "        :width \"${5:100px}\"",
+      "        ;; :height \"${6:15%}\"",
+      "        :anchor \"${7:left top}\"",
+      "        :y \"${8:30px}\"",
+      "        :x \"${9:10px}\")",
+      "    $0",
+      ")"
+    ],
+    "prefix": "window"
+  }
+}
