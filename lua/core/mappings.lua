@@ -16,6 +16,7 @@ map("n", "<ESC>", "<cmd>noh<cr>", "Remove highlights")
 -- navigation
 map("n", "<C-u>", "<C-u>zz", "Move half page and center")
 map("n", "<C-d>", "<C-d>zz", "Move half page and center")
+map("n", "G", "Gzz", "Move to end of page and center")
 
 -- Run file
 map("n", "<F5>", "<cmd>:lua require('core.filefunctions').runFile()<CR>", "run file")
