@@ -35,6 +35,7 @@ return {
 		local t = require("telescope.builtin")
 
 		map("n", "<leader>sf", t.find_files, "Find files")
+		map("n", "<leader>sg", t.git_files, "Find git files")
 		map("n", "<leader>sw", t.live_grep, "Find word")
 		map("n", "<leader>sb", t.buffers, "Find buffers")
 		map("n", "<leader>sd", t.diagnostics, "Find diagnostics")

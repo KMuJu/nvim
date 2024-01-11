@@ -6,6 +6,8 @@ require("core.mappings")
 
 require("core.options")
 
+require("core.folds")
+
 local colorscheme = require("helpers.theme")
 vim.cmd.colorscheme(colorscheme)
 
