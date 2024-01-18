@@ -77,6 +77,7 @@ map("n", "<leader>i", "<cmd>:lua require('core.functions.diagnostics').change()<
 
 -- Oil
 map("n", "<leader>o", "<cmd>Oil<CR>", "Open oil in parent dir")
+map("n", "<leader>O", "<cmd>lua require('mini.files').open()<CR>", "Open mini files view")
 
 
 -------------

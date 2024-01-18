@@ -6,7 +6,7 @@ local opts = {
 	termguicolors = true,
 	number = true,
 	relativenumber = true,
-    scrolloff = 17,
+    scrolloff = 7,
 }
 
 -- Set options from table

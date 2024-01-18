@@ -82,7 +82,7 @@ local custom =  {
         -- Telescope
         TelescopeMatching = { fg = red2 },
 
-        Type = { fg = yellow3 },
+        Type = { fg = red2 },
 
         Variable = { fg = blue1 },
         Float_border = {fg = red1, bg = yellow1},

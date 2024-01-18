@@ -25,6 +25,9 @@ return {
             "cmake",
             "bashls",
             "ocamllsp",
+
+            "jdtls", -- java
+            "lemminx", --
         }
         require("mason").setup()
         require("mason-lspconfig").setup({
@@ -100,7 +103,7 @@ return {
         end
 
         -- Lua
-        require("lspconfig")["lua_ls"].setup({
+        lspconfig["lua_ls"].setup({
             on_attach = on_attach,
             capabilities = capabilities,
             settings = {
@@ -122,7 +125,7 @@ return {
         })
 
         -- Python
-        require("lspconfig")["pylsp"].setup({
+        lspconfig["pylsp"].setup({
             on_attach = on_attach,
             capabilities = capabilities,
             settings = {
@@ -151,7 +154,7 @@ return {
             },
         })
 
-        require("lspconfig")["clangd"].setup({
+        lspconfig["clangd"].setup({
             on_attach = function(client, bufnr)
                 client.server_capabilities.signatureHelpProvider = false
                 on_attach(client, bufnr)

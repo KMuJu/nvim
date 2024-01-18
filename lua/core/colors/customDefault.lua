@@ -38,5 +38,7 @@ return {
 
         -- Telescope
         TelescopeMatching = { fg = red2 },
+
+        ["@type.qualifier.java"] = { fg = purple3 },
     }
 }
