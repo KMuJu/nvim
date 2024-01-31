@@ -6,6 +6,12 @@
           "yuck"
         ],
         "path": "./yuck.json"
+      },
+      {
+        "language": [
+          "go"
+        ],
+        "path": "./go.json"
       }
     ]
   },

@@ -25,14 +25,16 @@ local aqua2     = "#8ec07c"
 local gray1     = "#a89984"
 local gray2     = "#928374"
 
+local visual    = "#a89f88"
+
 return {
     highlight_groups = {
         Folded = { fg = aqua2, bg = gray2, blend = 20 },
         FoldColumn = { fg = aqua2, bg = yellow2 },
-        
+
         -- For non-current windows
-        NormalNC = { bg = bg_dark },                   
-        
+        NormalNC = { bg = bg_dark },
+
         -- Oil directory
         Directory = { fg = blue3, bold = true, italic = true },
 
@@ -40,5 +42,9 @@ return {
         TelescopeMatching = { fg = red2 },
 
         ["@type.qualifier.java"] = { fg = purple3 },
+        ['LspReferenceWrite'] = { bg = gray1, blend = 10},
+        ['LspReferenceRead'] = { bg = gray2, blend = 10},
+        ['LspReferenceText'] = { bg = gray2, blend = 10},
+        ['Visual'] = { bg = visual, blend = 45},
     }
 }

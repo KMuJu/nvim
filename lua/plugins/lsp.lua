@@ -28,6 +28,10 @@ return {
 
             "jdtls", -- java
             "lemminx", --
+
+            "gopls",
+            "dockerls",
+            "templ",
         }
         require("mason").setup()
         require("mason-lspconfig").setup({
@@ -86,6 +90,10 @@ return {
 
             lsp_map("<leader>ff", "<cmd>Format<cr>", bufnr, "Format")
             require("helpers.keys").map("v", "<leader>fv", vim.lsp.buf.format, "Format selection")
+
+            vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {
+                border = "rounded",
+            })
 
             -- Attach and configure vim-illuminate
             require("illuminate").on_attach(client)

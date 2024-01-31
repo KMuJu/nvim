@@ -22,11 +22,12 @@ local default = get_if_available("core.colors.customDefault")
 
 local M = {}
 M.all = {
-    vim.tbl_deep_extend("keep", gruvBox, default),
+    vim.tbl_deep_extend("keep", rose_pine, default),
     vim.tbl_deep_extend("keep", dark, default),
+    vim.tbl_deep_extend("keep", gruvBox, default),
 }
 
-M.index = 2
+M.index = 1
 M.custom = M.all[M.index]
 
 M.switch = function ()

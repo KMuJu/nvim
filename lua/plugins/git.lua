@@ -27,6 +27,7 @@ return {
 			map("n", "<leader>ga", "<cmd>Git add %<cr>", "Stage the current file")
 			map("n", "<leader>gc", "<cmd>Git commit<cr>", "Git commit")
 			map("n", "<leader>gb", "<cmd>Git blame<cr>", "Show the blame")
+			map("n", "<leader>gp", "<cmd>Gitsigns preview_hunk<cr>", "Show git changes in hunk")
 		end
 	}
 }
