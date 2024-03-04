@@ -1,12 +1,12 @@
 vim.o.termguicolors = true
 vim.o.linebreak = true
-require("core.lazy")
+require("lazysetup")
 
-require("core.mappings")
+require("mappings")
 
-require("core.options")
+require("options")
 
-require("core.folds")
+require("folds")
 
 local colorscheme = require("helpers.theme")
 vim.cmd.colorscheme(colorscheme)

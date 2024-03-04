@@ -1,6 +1,6 @@
 
 
-local rose_pine = require("core.colors.rose-pine")
+local rose_pine = require("custom.colors.rose-pine")
 
 local function get_if_available(colors)
 	local lua_ok, colorscheme = pcall(require, colors)

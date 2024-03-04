@@ -51,7 +51,7 @@ return {
         end
 
         -- Diagnostic config
-        local config = require("core.functions.diagnostics").diag1
+        local config = require("custom.functions.diagnostics").diag1
         vim.diagnostic.config(config)
 
         local on_attach = function(client, bufnr)
