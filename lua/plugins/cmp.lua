@@ -74,7 +74,7 @@ return {
 				},
 				{
 					name = "path",
-                    priority = 90
+                    priority = 100
 				},
 			},
 		})

@@ -38,11 +38,11 @@ M.lsp_map = function(lhs, rhs, bufnr, desc)
     else
         lsp_map = lm
     end
-    lsp_map(lhs, rhs, bufnr, desc)
+    lsp_map(lhs, rhs, bufnr, "LSP: " .. desc)
 end
 
 M.dap_map = function(mode, lhs, rhs, desc)
-	M.map(mode, lhs, rhs, desc)
+	M.map(mode, lhs, rhs, "DAP: " .. desc)
 end
 
 M.set_leader = function(key)

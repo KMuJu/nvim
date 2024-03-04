@@ -17,8 +17,8 @@ return {
         })
     end,
     keys = {
-        -- { '"',     mode = { "n", "v" } },
-        { "<C-R>", mode = { "n", "v", "i" } },
+        { '"',     mode = { "n", "v" } },
+        -- { "<C-R>", mode = { "n", "v", "i" } },
     },
     name = "registers",
 }

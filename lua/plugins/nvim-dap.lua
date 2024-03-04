@@ -8,7 +8,7 @@ return{
 		config = function()
 			local dap = require("dap")
 			local dapui = require("dapui")
-			local map = require("helpers.keys").map
+			local map = require("helpers.keys").dap_map
 			dapui.setup()
 			dap.listeners.after.event_initialized["dapui_config"] = function()
 				dapui.open()

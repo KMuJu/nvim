@@ -8,11 +8,10 @@ function _G.fold_text()
 
     local middle = string.rep("-", winWidth - vim.fn.strdisplaywidth(rightstr) - #line)
     -- local middle = string.rep(" ", 20)
-    
+
     return line .. middle .. rightstr
 end
 
 vim.o.foldtext = "v:lua.fold_text()"
-
 
 vim.opt.fillchars = { eob = "-", fold = "-" }

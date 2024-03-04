@@ -51,23 +51,7 @@ return {
         end
 
         -- Diagnostic config
-        local config = {
-            virtual_text = false,
-            signs = {
-                active = signs,
-            },
-            update_in_insert = true,
-            underline = false,
-            severity_sort = true,
-            float = {
-                focusable = false,
-                style = "minimal",
-                border = "rounded",
-                source = "always",
-                header = "",
-                prefix = "",
-            },
-        }
+        local config = require("core.functions.diagnostics").diag1
         vim.diagnostic.config(config)
 
         local on_attach = function(client, bufnr)

@@ -31,6 +31,7 @@ return {
     highlight_groups = {
         Folded = { fg = aqua2, bg = gray2, blend = 20 },
         FoldColumn = { fg = aqua2, bg = yellow2 },
+        CursorLine = { bg = blue1, blend = 10 },                            -- Cursorline in neotree
 
         -- For non-current windows
         NormalNC = { bg = bg_dark },
@@ -46,5 +47,7 @@ return {
         ['LspReferenceRead'] = { bg = gray2, blend = 10},
         ['LspReferenceText'] = { bg = gray2, blend = 10},
         ['Visual'] = { bg = visual, blend = 45},
+        DiffDelete = { bg = yellow3 },
+        DiffAdd = { bg = green3 },
     }
 }
