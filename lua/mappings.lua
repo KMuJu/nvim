@@ -67,7 +67,7 @@ map("n", "<S-h>", ":bprevious<CR>", "Precious buffer")
 
 -- Diagnostic keymaps
 map('n', 'gx', function() vim.diagnostic.open_float(nil, {focus=false})end, "Show diagnostics under cursor")
-map("n", "<leader>i", "<cmd>:lua require('core.functions.diagnostics').change()<CR>", "Change diagnostics")
+map("n", "<leader>i", "<cmd>:lua require('custom.functions.diagnostics').change()<CR>", "Change diagnostics")
 map('n', '[d', vim.diagnostic.goto_prev, 'Go to previous [D]iagnostic message' )
 map('n', ']d', vim.diagnostic.goto_next, 'Go to next [D]iagnostic message' )
 map('n', '<leader>de', vim.diagnostic.open_float, 'Show [D]iagnostic [E]rror messages' )

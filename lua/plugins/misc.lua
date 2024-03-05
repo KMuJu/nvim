@@ -29,6 +29,7 @@ return {
 	-- cellular automata
 	{
 		"eandrju/cellular-automaton.nvim",
+		event = "VeryLazy",
 	},
 	--[[ {
         "Djancyp/better-comments.nvim",
