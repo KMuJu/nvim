@@ -1,5 +1,3 @@
-
-
 local rose_pine = require("custom.colors.rose-pine")
 
 local function get_if_available(colors)
@@ -15,25 +13,24 @@ local function get_if_available(colors)
 	return rose_pine
 end
 
-local gruvBox = get_if_available("core.colors.customGruvbox")
-local dark = get_if_available("core.colors.customDark")
+local gruvBox = get_if_available("custom.colors.customGruvbox")
+local dark = get_if_available("custom.colors.customDark")
 -- local custom = get_if_available("gruvbox")
-local default = get_if_available("core.colors.customDefault")
+local default = get_if_available("custom.colors.customDefault")
 
 local M = {}
 M.all = {
-    vim.tbl_deep_extend("keep", rose_pine, default),
-    vim.tbl_deep_extend("keep", dark, default),
-    vim.tbl_deep_extend("keep", gruvBox, default),
+	vim.tbl_deep_extend("keep", rose_pine, default),
+	vim.tbl_deep_extend("keep", dark, default),
+	vim.tbl_deep_extend("keep", gruvBox, default),
 }
 
 M.index = 1
 M.custom = M.all[M.index]
 
-M.switch = function ()
-    M.index = (M.index % #M.all) + 1
-    M.custom = M.all[M.index]
+M.switch = function()
+	M.index = (M.index % #M.all) + 1
+	M.custom = M.all[M.index]
 end
 
 return M
-

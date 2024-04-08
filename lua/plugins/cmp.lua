@@ -13,7 +13,10 @@ return {
 		local cmp = require("cmp")
 		local luasnip = require("luasnip")
 
+		local path = vim.fn.stdpath("config") .. "/snippets"
+		require("luasnip/loaders/from_vscode").lazy_load({ paths = { path } })
 		require("luasnip/loaders/from_vscode").lazy_load()
+
 		cmp.setup({
 			window = {
 				completion = cmp.config.window.bordered(),
@@ -28,6 +31,10 @@ return {
 				["<C-k>"] = cmp.mapping.select_prev_item(),
 				["<C-j>"] = cmp.mapping.select_next_item(),
 				["<CR>"] = cmp.mapping.confirm({
+					behavior = cmp.ConfirmBehavior.Replace,
+					select = false,
+				}),
+				["<C-i>"] = cmp.mapping.confirm({
 					behavior = cmp.ConfirmBehavior.Replace,
 					select = false,
 				}),
@@ -62,19 +69,19 @@ return {
 			sources = {
 				{
 					name = "nvim_lsp",
-                    priority = 70
+					priority = 70,
 				},
 				{
 					name = "luasnip",
-                    priority = 80
+					priority = 80,
 				},
 				{
 					name = "buffer",
-                    priority = 10
+					priority = 10,
 				},
 				{
 					name = "path",
-                    priority = 100
+					priority = 100,
 				},
 			},
 		})
