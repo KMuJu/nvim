@@ -8,6 +8,8 @@ require("options")
 
 require("folds")
 
+require("custom.startscreen").setup()
+
 local colorscheme = require("helpers.theme")
 vim.cmd.colorscheme(colorscheme)
 

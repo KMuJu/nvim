@@ -51,5 +51,7 @@ return {
 		["Visual"] = { bg = visual, blend = 45 },
 		DiffDelete = { bg = yellow3 },
 		DiffAdd = { bg = green3 },
+
+		HoltersTitle = { fg = purple3 },
 	},
 }
