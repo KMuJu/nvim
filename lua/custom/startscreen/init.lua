@@ -32,9 +32,9 @@ M.createBuf = function(default)
 	vim.api.nvim_set_option_value("filetype", name, { buf = bufnr })
 	vim.api.nvim_set_option_value("swapfile", false, { buf = bufnr })
 
-	-- vim.api.nvim_buf_delete(default, {})
 	vim.api.nvim_set_current_buf(bufnr)
 
+	vim.api.nvim_buf_delete(default, { force = true })
 	return bufnr
 end
 
@@ -68,7 +68,15 @@ M.fillBuf = function(buf)
 	local start_col = 0
 	local win = vim.fn.bufwinid(buf)
 	local width = vim.api.nvim_win_get_width(win)
+	local height = vim.api.nvim_win_get_height(win)
+	local top = math.floor((height - #lines) / 2)
 	local left = math.floor((width - #lines[1]) / 2)
+
+	local topOffset = -0
+
+	for _ = 1, top + topOffset do
+		table.insert(lines, 1, "")
+	end
 
 	local spaceWidth = ""
 	for _ = 1, left do
@@ -88,14 +96,10 @@ end
 
 M.run = function()
 	local curr = vim.api.nvim_get_current_buf()
-	local currname = vim.api.nvim_buf_get_name(curr)
-	local filetype = vim.api.nvim_get_option_value("filetype", { buf = curr })
+	-- local currname = vim.api.nvim_buf_get_name(curr)
+	-- local filetype = vim.api.nvim_get_option_value("filetype", { buf = curr })
 
-	if currname == "" and filetype == name then
-		vim.api.nvim_buf_delete(curr, { force = true })
-	end
-
-	local buf = M.createBuf(0)
+	local buf = M.createBuf(curr)
 	M.fillBuf(buf)
 
 	set_options()
@@ -103,9 +107,15 @@ M.run = function()
 end
 
 M.setup = function()
-	vim.api.nvim_create_autocmd("VimEnter", {
+	vim.api.nvim_create_autocmd("UiEnter", {
 		group = autocmd_group,
-		callback = M.run,
+		callback = function()
+			if next(vim.fn.argv()) ~= nil then
+				-- neovim was opened with files
+				return
+			end
+			M.run()
+		end,
 		once = true,
 	})
 end

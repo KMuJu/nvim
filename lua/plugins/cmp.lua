@@ -30,18 +30,18 @@ return {
 			mapping = {
 				["<C-k>"] = cmp.mapping.select_prev_item(),
 				["<C-j>"] = cmp.mapping.select_next_item(),
-				["<CR>"] = cmp.mapping.confirm({
-					behavior = cmp.ConfirmBehavior.Replace,
-					select = false,
-				}),
+				-- ["<CR>"] = cmp.mapping.confirm({
+				-- 	behavior = cmp.ConfirmBehavior.Replace,
+				-- 	select = false,
+				-- }),
 				["<C-i>"] = cmp.mapping.confirm({
 					behavior = cmp.ConfirmBehavior.Replace,
 					select = false,
 				}),
 				["<Tab>"] = cmp.mapping(function(fallback)
-					if cmp.visible() then
-						cmp.select_next_item()
-					elseif luasnip.expand_or_jumpable() then
+					-- if cmp.visible() then
+					-- 	cmp.select_next_item()
+					if luasnip.expand_or_jumpable() then
 						luasnip.expand_or_jump()
 					else
 						fallback()
@@ -49,9 +49,9 @@ return {
 				end, { "i", "s" }),
 
 				["<S-Tab>"] = cmp.mapping(function(fallback)
-					if cmp.visible() then
-						cmp.select_prev_item()
-					elseif luasnip.jumpable(-1) then
+					-- if cmp.visible() then
+					-- 	cmp.select_prev_item()
+					if luasnip.jumpable(-1) then
 						luasnip.jump(-1)
 					else
 						fallback()
