@@ -1,17 +1,31 @@
 local constants = require("custom.filetree.const")
+local dev_icons = require("nvim-web-devicons")
 
 local M = {}
-local tree = require("custom.filetree.tree-builder")
+local highlight_id = vim.api.nvim_create_namespace(constants.NAME)
 
----@param parent Node
-local function get_visible_names(parent)
+---@param tree FileTree
+---@return table<string>, table<string>
+local function get_visible_names(tree)
 	local names = {}
-	for _, node in ipairs(parent.children) do
-		table.insert(names, node.name)
+	local highlights = {}
+	---@type string, Node
+	for name, node in pairs(tree.tree) do
+		local icon
+		local hl
+		if node.type ~= "directory" then
+			icon, hl = dev_icons.get_icon(name, node.extension, { default = true })
+		else
+			icon = ""
+			hl = "Directory"
+		end
+		table.insert(highlights, hl)
+		table.insert(names, icon .. " " .. name)
 	end
-	return names
+	return names, highlights
 end
 
+-- Creates a buffer, will return the id of the left window
 ---@return integer, integer
 local function create_buf()
 	local win = vim.api.nvim_get_current_win()
@@ -24,32 +38,28 @@ local function create_buf()
 
 	vim.api.nvim_win_set_buf(win, buf)
 
-	vim.cmd("vsplit")
+	-- vim.cmd("vsplit")
 
 	return buf, -1
 end
 
----@param root Root
-M.draw = function(root)
-	local names = get_visible_names(root)
-	print(vim.inspect(names))
+---@param tree FileTree
+---@return integer
+function M.draw(tree)
+	local names, highlights = get_visible_names(tree)
 	local buf, _ = create_buf()
 
-	vim.api.nvim_buf_set_lines(buf, 0, 0, true, names)
+	vim.api.nvim_buf_set_lines(buf, 0, 1, true, names)
+
+	local i = 1
+	for _, hl in pairs(highlights) do
+		vim.api.nvim_buf_set_extmark(buf, highlight_id, i - 1, 0, {
+			end_row = i,
+			hl_group = hl,
+		})
+		i = i + 1
+	end
+	return buf
 end
-
-local path = vim.fn.getcwd()
-local handle = vim.loop.fs_scandir(path)
-if handle == nil then
-	return
-end
-
----@alias Root
----| {absolute_path: string, children: table<Node>}
-
----@type Root
-local root = { absolute_path = vim.fn.getcwd(), children = {} }
-tree.exoloreNode(handle, path, root)
-M.draw(root)
 
 return M

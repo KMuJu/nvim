@@ -11,7 +11,7 @@ function M.folder(parent, absolute_path, name, fs_stat)
 
 	local node = {
 		type = "directory",
-		absolute_path = absolute_path,
+		absolute_path = absolute_path .. "/",
 		fs_stat = fs_stat,
 		group_next = nil, -- If node is grouped, this points to the next child dir/link node
 		has_children = has_children,

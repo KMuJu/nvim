@@ -8,6 +8,8 @@ require("options")
 
 require("folds")
 
+require("autocmd")
+
 require("custom.startscreen").setup()
 
 local colorscheme = require("helpers.theme")
