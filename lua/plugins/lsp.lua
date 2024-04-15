@@ -96,6 +96,16 @@ return {
 		end
 
 		-- Lua
+		local lualib = {
+			[vim.fn.expand("$VIMRUNTIME/lua")] = true,
+			[vim.fn.stdpath("config") .. "/lua"] = true,
+		}
+
+		local luaruntim = vim.api.nvim_get_runtime_file("lua", true)
+		for _, p in ipairs(luaruntim) do
+			lualib[p] = true
+		end
+
 		lspconfig["lua_ls"].setup({
 			on_attach = on_attach,
 			capabilities = capabilities,
@@ -108,10 +118,12 @@ return {
 						globals = { "vim" },
 					},
 					workspace = {
-						library = {
-							[vim.fn.expand("$VIMRUNTIME/lua")] = true,
-							[vim.fn.stdpath("config") .. "/lua"] = true,
-						},
+						library = lualib,
+						-- library = {
+						-- 	[vim.fn.expand("$VIMRUNTIME/lua")] = true,
+						-- 	[vim.fn.stdpath("config") .. "/lua"] = true,
+						-- },
+						-- library = vim.api.nvim_get_runtime_file("lua", true),
 					},
 				},
 			},

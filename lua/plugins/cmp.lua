@@ -34,7 +34,7 @@ return {
 				-- 	behavior = cmp.ConfirmBehavior.Replace,
 				-- 	select = false,
 				-- }),
-				["<C-i>"] = cmp.mapping.confirm({
+				["<C-h>"] = cmp.mapping.confirm({
 					behavior = cmp.ConfirmBehavior.Replace,
 					select = false,
 				}),

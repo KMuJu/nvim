@@ -3,7 +3,6 @@ local map = require("helpers.keys").map
 
 -- open explorer
 map("n", "<leader>pv", "<cmd>Explore<cr>", "Open explore")
-map("n", "<leader>po", require("custom.filetree").open, "Open custom filetree")
 
 -- close buffer
 map("n", "<leader>db", "<cmd>bdelete<cr>", "Delete buffer")
