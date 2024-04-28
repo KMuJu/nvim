@@ -101,8 +101,8 @@ return {
 			[vim.fn.stdpath("config") .. "/lua"] = true,
 		}
 
-		local luaruntim = vim.api.nvim_get_runtime_file("lua", true)
-		for _, p in ipairs(luaruntim) do
+		local luaruntime = vim.api.nvim_get_runtime_file("lua", true)
+		for _, p in ipairs(luaruntime) do
 			lualib[p] = true
 		end
 
@@ -118,12 +118,12 @@ return {
 						globals = { "vim" },
 					},
 					workspace = {
-						library = lualib,
+						-- library = lualib,
 						-- library = {
 						-- 	[vim.fn.expand("$VIMRUNTIME/lua")] = true,
 						-- 	[vim.fn.stdpath("config") .. "/lua"] = true,
 						-- },
-						-- library = vim.api.nvim_get_runtime_file("lua", true),
+						library = vim.api.nvim_get_runtime_file("lua", true),
 					},
 				},
 			},

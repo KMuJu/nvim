@@ -44,6 +44,7 @@ return {
 		-- markdownH1 = { fg = red2 },      -- markdown header
 		["@markup.list.unchecked.markdown"] = { fg = red2, bold = true },
 		["@markup.list.checked.markdown"] = { fg = gray1, bold = true, blend = 30 },
+		["@markup.list"] = { bg = aqua1, blend = 10, bold = true },
 		["@type.qualifier.java"] = { fg = purple3 },
 		["LspReferenceWrite"] = { bg = gray1, blend = 10 },
 		["LspReferenceRead"] = { bg = gray2, blend = 10 },

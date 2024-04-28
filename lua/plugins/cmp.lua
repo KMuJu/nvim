@@ -34,7 +34,7 @@ return {
 				-- 	behavior = cmp.ConfirmBehavior.Replace,
 				-- 	select = false,
 				-- }),
-				["<C-h>"] = cmp.mapping.confirm({
+				["<C-n>"] = cmp.mapping.confirm({
 					behavior = cmp.ConfirmBehavior.Replace,
 					select = false,
 				}),
@@ -67,6 +67,11 @@ return {
 				end, { "i", "s" }),
 			},
 			sources = {
+
+				{
+					name = "vimtex",
+					priority = 80,
+				},
 				{
 					name = "nvim_lsp",
 					priority = 70,

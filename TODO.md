@@ -10,6 +10,9 @@
 - [ ] Telescope markdown header picker
 - [ ] Better colors
     - [ ] Whole line checked list
+- [ ] Continue list on enter
+    - And such
+
 
 
 # Ideas
