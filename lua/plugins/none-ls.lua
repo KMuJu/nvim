@@ -1,5 +1,6 @@
 return {
 	"nvimtools/none-ls.nvim",
+	enabled = false,
 	config = function()
 		local null_ls = require("null-ls")
 
@@ -27,7 +28,7 @@ return {
 					},
 				}),
 				null_ls.builtins.formatting.black,
-				null_ls.builtins.formatting.ocamlformat,
+				-- null_ls.builtins.formatting.ocamlformat,
 			},
 		})
 	end,
