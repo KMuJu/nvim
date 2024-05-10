@@ -7,7 +7,8 @@
 - [ ] TODO telescope picker
 
 ## Markdown
-- [ ] Telescope markdown header picker
+- [x] Telescope markdown header picker
+    - [ ] Add previewer
 - [ ] Better colors
     - [ ] Whole line checked list
 - [ ] Continue list on enter
