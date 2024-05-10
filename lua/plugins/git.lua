@@ -4,6 +4,7 @@ return {
 		"lewis6991/gitsigns.nvim",
 		opts = {},
 		config = function()
+			require("gitsigns").setup()
 			map("n", "<leader>gp", "<cmd>Gitsigns preview_hunk<cr>", "Show git changes in hunk")
 		end,
 	},
@@ -24,15 +25,15 @@ return {
 			})
 		end,
 	},
-	{
-		"tpope/vim-fugitive",
-		enabled = false,
-		config = function()
-			map("n", "<leader>ga", "<cmd>Git add %<cr>", "Stage the current file")
-			map("n", "<leader>gc", "<cmd>Git commit<cr>", "Git commit")
-			map("n", "<leader>gb", "<cmd>Git blame<cr>", "Show the blame")
-		end,
-	},
+	-- {
+	-- 	"tpope/vim-fugitive",
+	-- 	enabled = false,
+	-- 	config = function()
+	-- 		map("n", "<leader>ga", "<cmd>Git add %<cr>", "Stage the current file")
+	-- 		map("n", "<leader>gc", "<cmd>Git commit<cr>", "Git commit")
+	-- 		map("n", "<leader>gb", "<cmd>Git blame<cr>", "Show the blame")
+	-- 	end,
+	-- },
 	{
 		"NeogitOrg/neogit",
 		dependencies = {

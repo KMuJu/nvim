@@ -16,6 +16,7 @@ return {
 		config = function()
 			require("Filetree").setup({})
 			map("n", "<leader>po", require("Filetree").open, "Open custom filetree")
+			map("n", "<leader>pp", require("Filetree").togglePreview, "Open custom filetree")
 		end,
 	},
 }

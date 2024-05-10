@@ -21,6 +21,7 @@ local opts = {
 
 	-- Show which line your cursor is on
 	cursorline = true,
+	-- signcolumn = "yes",
 }
 
 -- Set options from table
