@@ -45,7 +45,6 @@ function M.show_headers(opts)
 		return
 	end
 	local headers = get_headers(bufnr)
-	print(vim.inspect(headers))
 	pickers
 		.new(opts, {
 			finder = finders.new_table({
