@@ -17,9 +17,6 @@ map("n", "<C-u>", "<C-u>zz", "Move half page and center")
 map("n", "<C-d>", "<C-d>zz", "Move half page and center")
 map("n", "G", "Gzz", "Move to end of page and center")
 
--- Run file
-map("n", "<F5>", "<cmd>:lua require('custom.functions.filefunctions').runFile()<CR>", "run file")
-
 -- Primeagen conf
 map({ "n", "v" }, "<leader>y", '"+y', "Copy into + buffer (System clipboard)")
 map("n", "<leader>Y", '"+Y', "Copy whole line into + buffer")
