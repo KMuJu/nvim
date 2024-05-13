@@ -60,10 +60,11 @@ return {
 			lsp_map("<leader>lr", vim.lsp.buf.rename, bufnr, "Rename symbol")
 			lsp_map("<leader>la", vim.lsp.buf.code_action, bufnr, "Code action")
 			lsp_map("<leader>ld", vim.lsp.buf.type_definition, bufnr, "Type definition")
-			lsp_map("<leader>ls", require("telescope.builtin").lsp_document_symbols, bufnr, "Document symbols")
+			lsp_map("<leader>ls", require("fzf-lua").lsp_document_symbols, bufnr, "Document symbols")
+			-- lsp_map("<leader>ls", require("telescope.builtin").lsp_document_symbols, bufnr, "Document symbols")
 
 			lsp_map("gd", vim.lsp.buf.definition, bufnr, "Goto Definition")
-			lsp_map("gr", require("telescope.builtin").lsp_references, bufnr, "Goto References")
+			lsp_map("gr", require("fzf-lua").lsp_references, bufnr, "Goto References")
 			lsp_map("gI", vim.lsp.buf.implementation, bufnr, "Goto Implementation")
 			lsp_map("K", vim.lsp.buf.hover, bufnr, "Hover Documentation")
 			lsp_map("gD", vim.lsp.buf.declaration, bufnr, "Goto Declaration")
