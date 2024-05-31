@@ -1,5 +1,6 @@
 -- vim.keymap.set("n", "<leader>pv", "<cmd>Explore<cr>", {silent=true, desc = "Open explore"})
 local map = require("helpers.keys").map
+map("i", "<C-n>", "", "Turn off mapping")
 
 -- open explorer
 map("n", "<leader>pv", "<cmd>Explore<cr>", "Open explore")

@@ -10,6 +10,9 @@ return {
 	},
 	config = function()
 		local status, lsp = pcall(require, "lspconfig")
+		if not status then
+			return
+		end
 		local servers = {
 			"lua_ls",
 			-- "pylsp",
@@ -131,34 +134,34 @@ return {
 		})
 
 		-- Python
-		lspconfig["pylsp"].setup({
-			on_attach = on_attach,
-			capabilities = capabilities,
-			settings = {
-				pylsp = {
-					plugins = {
-						flake8 = {
-							enabled = true,
-							maxLineLength = 88, -- Black's line length
-						},
-						-- Disable plugins overlapping with flake8
-						pycodestyle = {
-							enabled = false,
-						},
-						mccabe = {
-							enabled = false,
-						},
-						pyflakes = {
-							enabled = false,
-						},
-						-- Use Black as the formatter
-						autopep8 = {
-							enabled = false,
-						},
-					},
-				},
-			},
-		})
+		-- lspconfig["pylsp"].setup({
+		-- 	on_attach = on_attach,
+		-- 	capabilities = capabilities,
+		-- 	settings = {
+		-- 		pylsp = {
+		-- 			plugins = {
+		-- 				flake8 = {
+		-- 					enabled = true,
+		-- 					maxLineLength = 88, -- Black's line length
+		-- 				},
+		-- 				-- Disable plugins overlapping with flake8
+		-- 				pycodestyle = {
+		-- 					enabled = false,
+		-- 				},
+		-- 				mccabe = {
+		-- 					enabled = false,
+		-- 				},
+		-- 				pyflakes = {
+		-- 					enabled = false,
+		-- 				},
+		-- 				-- Use Black as the formatter
+		-- 				autopep8 = {
+		-- 					enabled = false,
+		-- 				},
+		-- 			},
+		-- 		},
+		-- 	},
+		-- })
 
 		lspconfig["clangd"].setup({
 			on_attach = function(client, bufnr)
@@ -166,6 +169,22 @@ return {
 				on_attach(client, bufnr)
 			end,
 		})
+
+		-- lspconfig["gopls"].setup({
+		-- 	settings = {
+		-- 		gopls = {
+		-- 			hints = {
+		-- 				assignVariableTypes = true,
+		-- 				compositeLiteralFields = true,
+		-- 				compositeLiteralTypes = true,
+		-- 				constantValues = true,
+		-- 				functionTypeParameters = true,
+		-- 				parameterNames = true,
+		-- 				rangeVariableTypes = true,
+		-- 			},
+		-- 		},
+		-- 	},
+		-- })
 
 		require("lspconfig")["ocamllsp"].setup({
 			cmd = { "ocamllsp" },
