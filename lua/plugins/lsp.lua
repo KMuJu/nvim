@@ -4,7 +4,7 @@ return {
 		"williamboman/mason.nvim",
 		"williamboman/mason-lspconfig.nvim",
 		-- "j-hui/fidget.nvim",
-		"folke/neodev.nvim",
+		"folke/lazydev.nvim",
 		"RRethy/vim-illuminate",
 		"hrsh7th/cmp-nvim-lsp",
 	},
@@ -44,8 +44,6 @@ return {
 		})
 
 		require("helpers.keys").map("n", "<leader>M", "<cmd>Mason<cr>", "Show Mason")
-
-		require("neodev").setup()
 
 		-- Set up cool signs for diagnostics
 		local signs = { Error = "E ", Warn = " ", Hint = "H ", Info = " " }
