@@ -5,6 +5,8 @@ local path = vim.fn.stdpath("config") .. "/snippets"
 require("luasnip/loaders/from_vscode").lazy_load({ paths = { path } })
 require("luasnip/loaders/from_vscode").lazy_load()
 
+local cmp_select = { behavior = cmp.SelectBehavior.Select }
+
 cmp.setup({
 	window = {
 		completion = cmp.config.window.bordered(),
@@ -16,8 +18,8 @@ cmp.setup({
 		end,
 	},
 	mapping = {
-		["<C-k>"] = cmp.mapping.select_prev_item(),
-		["<C-j>"] = cmp.mapping.select_next_item(),
+		["<C-k>"] = cmp.mapping.select_prev_item(cmp_select),
+		["<C-j>"] = cmp.mapping.select_next_item(cmp_select),
 		-- ["<CR>"] = cmp.mapping.confirm({
 		-- 	behavior = cmp.ConfirmBehavior.Replace,
 		-- 	select = false,

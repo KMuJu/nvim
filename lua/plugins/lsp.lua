@@ -70,6 +70,11 @@ return {
 			lsp_map("K", vim.lsp.buf.hover, bufnr, "Hover Documentation")
 			lsp_map("gD", vim.lsp.buf.declaration, bufnr, "Goto Declaration")
 
+			-- Inlay hints
+			lsp_map("<leader>lh", function()
+				lsp.inlay_hint.enable(0, not lsp.inlay_hint.is_enabled())
+			end, bufnr, "Toggle inline [H]ints")
+
 			-- Create a command `:Format` local to the LSP buffer
 			vim.api.nvim_buf_create_user_command(bufnr, "Format", function(_)
 				vim.lsp.buf.format()
