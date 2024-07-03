@@ -37,5 +37,10 @@ return {
 			"<cmd>Trouble qflist toggle<cr>",
 			desc = "Quickfix List (Trouble)",
 		},
+		{
+			"<leader>xs",
+			"<cmd>Trouble lsp_document_symbols <cr>",
+			desc = "Quickfix List (Trouble)",
+		},
 	},
 }
