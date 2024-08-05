@@ -1,5 +1,3 @@
-
-
 local rose_pine = require("core.colors.rose-pine")
 
 local function get_if_available(colors)
@@ -18,4 +16,3 @@ end
 local custom = get_if_available("core.colors.rose_pine")
 print("ABABABABABABAB")
 return custom
-

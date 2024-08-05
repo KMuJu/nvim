@@ -9,11 +9,6 @@ return {
 	config = function()
 		local map = require("helpers.keys").map
 		require("neo-tree").setup()
-		map(
-		{ "n", "v" },
-		"<leader>e",
-		"<cmd>Neotree filesystem toggle<cr>",
-		"Toggle file explorer"
-		)
-	end
+		map({ "n", "v" }, "<leader>e", "<cmd>Neotree filesystem toggle<cr>", "Toggle file explorer")
+	end,
 }
