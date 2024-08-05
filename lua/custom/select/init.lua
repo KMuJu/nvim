@@ -52,8 +52,4 @@ function M.select(items, opts, on_choice)
 	})
 end
 
--- M.select({ "a", "bbb", "cc" }, {}, function()
--- 	print("on_choice")
--- end)
-
 return M
