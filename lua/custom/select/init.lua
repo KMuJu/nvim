@@ -2,9 +2,13 @@ local utils = require("custom.select.utils")
 
 local M = {}
 
+---@param items any[]
+---@param opts table
+---@param on_choice fun(item: any?, idx: integer?)
 function M.select(items, opts, on_choice)
 	local lines = {}
 	local maxwidth = 0
+	-- Create the lines from items with format_item and gets max length
 	for _, item in ipairs(items) do
 		local str = opts.format_item(item)
 		table.insert(lines, str)
@@ -25,6 +29,7 @@ function M.select(items, opts, on_choice)
 
 	vim.api.nvim_buf_set_lines(buf, 0, -1, false, lines)
 
+	-- Adds the number keymap to each item
 	for index, _ in pairs(items) do
 		utils.add_key_map(index, function()
 			on_choice(items[index], index)
@@ -39,11 +44,14 @@ function M.select(items, opts, on_choice)
 		end)
 	end
 
-	vim.keymap.set("n", "<CR>", function()
-		local index, _ = unpack(vim.api.nvim_win_get_cursor(0))
-		on_choice(items[index], index)
-		utils.closeWindow(buf, win)
-	end)
+	-- Every key that will select current line
+	for _, key in pairs({ "<CR>", "<C-space>" }) do
+		vim.keymap.set("n", key, function()
+			local index, _ = unpack(vim.api.nvim_win_get_cursor(0))
+			on_choice(items[index], index)
+			utils.closeWindow(buf, win)
+		end)
+	end
 
 	vim.api.nvim_create_autocmd({ "BufLeave", "ModeChanged" }, {
 		buffer = buf,
