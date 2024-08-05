@@ -15,9 +15,14 @@ return {
 			require("colorizer").setup({ "*" })
 		end,
 	},
-	--rainbow
 	{
-		"p00f/nvim-ts-rainbow",
+		"lukas-reineke/indent-blankline.nvim",
+		main = "ibl",
+		event = "VimEnter",
+		opts = {
+			scope = { show_start = false, show_end = true },
+			indent = { tab_char = "▎" },
+		},
 	},
 	-- harpoon
 	{
