@@ -8,7 +8,6 @@ function M.create_window(enter, opts)
 	local buf_id = vim.api.nvim_create_buf(false, true)
 	local win_config = config.createConfig(opts)
 	local win_id = vim.api.nvim_open_win(buf_id, enter, win_config)
-	print(vim.inspect(win_config))
 
 	for opt, val in pairs(win_options) do
 		vim.api.nvim_set_option_value(opt, val, { win = win_id })
@@ -27,7 +26,6 @@ function M.closeWindow(buf_id, win_id)
 end
 
 function M.add_key_map(key, func, buf)
-	print(buf)
 	vim.keymap.set("n", tostring(key), func, { buffer = buf })
 end
 
