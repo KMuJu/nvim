@@ -33,7 +33,6 @@ function M.createConfig(opts)
 		noautocmd = true,
 		col = (vim.o.columns / 2) - (width / 2),
 		row = (vim.o.lines / 2) - (height / 2),
-		title = "Keymaps",
 		title_pos = "center",
 	})
 	print("config", vim.inspect(config))

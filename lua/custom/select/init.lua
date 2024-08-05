@@ -20,6 +20,7 @@ function M.select(items, opts, on_choice)
 		},
 		width = maxwidth,
 		height = #items,
+		title = opts.prompt or "Select:",
 	})
 
 	vim.api.nvim_buf_set_lines(buf, 0, -1, false, lines)
