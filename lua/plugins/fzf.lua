@@ -2,7 +2,13 @@ return {
 	"ibhagwan/fzf-lua",
 	config = function()
 		local fzf = require("fzf-lua")
-		fzf.setup()
+		fzf.setup({
+			winopts = {
+				preview = {
+					delay = 0,
+				},
+			},
+		})
 
 		local map = require("helpers.keys").map
 
