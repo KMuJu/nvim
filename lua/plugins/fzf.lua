@@ -8,6 +8,11 @@ return {
 					delay = 0,
 				},
 			},
+			keymap = {
+				fzf = {
+					["ctrl-q"] = "select-all+accept",
+				},
+			},
 		})
 
 		local map = require("helpers.keys").map
