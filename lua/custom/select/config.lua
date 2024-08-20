@@ -17,7 +17,7 @@ end
 
 function M.createConfig(opts)
 	local min_width = math.floor(vim.o.columns * 0.3)
-	local min_height = 3
+	local min_height = 1
 	local width = max(min_width, opts.width)
 	local height = max(min_height, opts.height)
 	opts = opts or {}
