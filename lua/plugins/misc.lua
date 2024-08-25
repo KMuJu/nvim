@@ -42,7 +42,10 @@ return {
         end
     }, ]]
 	-- yuck eww
-	"elkowar/yuck.vim",
+	{
+		"elkowar/yuck.vim",
+		ft = { "yuck" },
+	},
 	{
 		"joerdav/templ.vim",
 		ft = { "templ" },
