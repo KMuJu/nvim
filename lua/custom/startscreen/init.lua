@@ -106,15 +106,29 @@ M.run = function()
 	lock_buf(buf)
 end
 
+local function isShown()
+	if next(vim.fn.argv()) ~= nil then
+		-- neovim was opened with files
+		return true
+	end
+	local listed_buffers = vim.tbl_filter(function(buf_id)
+		return vim.fn.buflisted(buf_id) == 1
+	end, vim.api.nvim_list_bufs())
+	if #listed_buffers > 1 then
+		return true
+	end
+	return false
+end
+
 M.setup = function()
+	_G.Starter = M
 	vim.api.nvim_create_autocmd("UiEnter", {
 		group = autocmd_group,
 		callback = function()
-			if next(vim.fn.argv()) ~= nil then
-				-- neovim was opened with files
+			if isShown() then
 				return
 			end
-			M.run()
+			vim.cmd("noautocmd lua Starter.run()")
 		end,
 		once = true,
 	})
