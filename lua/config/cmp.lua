@@ -55,6 +55,8 @@ cmp.setup({
 				fallback()
 			end
 		end, { "i", "s" }),
+        ["<C-d>"] = cmp.mapping.scroll_docs(vim.api.nvim_win_get_height(0) / 2),
+        ["<C-u>"] = cmp.mapping.scroll_docs(vim.api.nvim_win_get_height(0) / 2),
 	},
 	sources = {
 

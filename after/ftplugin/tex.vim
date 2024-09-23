@@ -7,14 +7,14 @@ if exists("b:did_mytexplugin")
 endif
 let b:did_mytexplugin = 1
 
-" let g:tex_flavor = 'latex'  " recognize tex files as latex
+let g:tex_flavor = 'latex'  " recognize tex files as latex
 
 " setting indentation
 setlocal expandtab
 setlocal autoindent
-setlocal tabstop=4
-setlocal softtabstop=4
-setlocal shiftwidth=4
+setlocal tabstop=2
+setlocal softtabstop=2
+setlocal shiftwidth=2
 
 " Turn off automatic indenting in enumerated environments
 let g:tex_indent_items=0
