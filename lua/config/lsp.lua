@@ -67,6 +67,15 @@ local servers = {
 	gopls = {},
 	dockerls = {},
 	templ = {},
+    elixirls = {
+      cmd = { "/home/Kasper/.local/share/nvim/mason/bin/elixir-ls" },
+      root_dir = require("lspconfig.util").root_pattern { "mix.exs" },
+      server_capabilities = {
+        -- completionProvider = true,
+        -- definitionProvider = false,
+        documentFormattingProvider = false,
+      },
+    },
 }
 require("mason").setup()
 require("mason-lspconfig").setup({
