@@ -5,7 +5,6 @@ function M.runFile()
 		vim.cmd(":wa")
 		vim.cmd(":term clear;python %")
 	end
-
 end
 
 return M

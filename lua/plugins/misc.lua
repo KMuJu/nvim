@@ -15,9 +15,13 @@ return {
 			require("colorizer").setup({ "*" })
 		end,
 	},
-	--rainbow
 	{
-		"p00f/nvim-ts-rainbow",
+		"lukas-reineke/indent-blankline.nvim",
+		main = "ibl",
+		opts = {
+			scope = { show_start = false, show_end = false },
+			indent = { tab_char = "▎" },
+		},
 	},
 	-- harpoon
 	{
@@ -38,7 +42,10 @@ return {
         end
     }, ]]
 	-- yuck eww
-	"elkowar/yuck.vim",
+	{
+		"elkowar/yuck.vim",
+		ft = { "yuck" },
+	},
 	{
 		"joerdav/templ.vim",
 		ft = { "templ" },

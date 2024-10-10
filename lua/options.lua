@@ -31,5 +31,7 @@ end
 
 vim.g.ftplugin_sql_omni_key = "<C-j>"
 
+vim.ui.select = require("custom.select").select
+
 -- vim.o.updatetime = 250
 -- vim.cmd [[autocmd! CursorHold,CursorHoldI * lua vim.diagnostic.open_float(nil, {focus=false})]]

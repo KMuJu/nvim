@@ -25,30 +25,6 @@ return {
 				"vim",
 			},
 
-			rainbow = {
-				enable = true,
-				-- disable = { "jsx", "cpp" }, list of languages you want to disable the plugin for
-				disable = { "html" },
-				extended_mode = false, -- Also highlight non-bracket delimiters like html tags, boolean or table: lang -> boolean
-				colors = {
-					"#C9C300",
-					"#AF48AD",
-					"#458588",
-					-- "#d79921",
-					-- "#F199D4",
-				},
-				termcolors = {
-					"Green",
-					"Yellow",
-					"Blue",
-					"Magenta",
-					"Cyan",
-					"White",
-					"Red",
-				},
-				max_file_lines = nil, -- Do not enable for files with more than n lines, int
-			},
-
 			sync_install = false,
 			modules = {},
 			ignore_install = { "" },

@@ -15,7 +15,7 @@ return {
 					goBackToSearch = "<BS>",
 					deleteSnippet = "<C-BS>",
 					openInFile = "<C-o>",
-					insertNextToken = "<C-t>", -- works in insert & normal mode
+					insertNextPlaceholder = "<C-t>", -- works in insert & normal mode
 				},
 			},
 			-- `none` writes as a minified json file using `vim.encode.json`.
