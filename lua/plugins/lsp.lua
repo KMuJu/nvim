@@ -9,6 +9,7 @@ return {
 		"hrsh7th/cmp-nvim-lsp",
 	},
 	config = function()
+        require("java").setup()
 		require("config.lsp")
 	end,
 }
