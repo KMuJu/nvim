@@ -54,5 +54,10 @@ return {
 		DiffAdd = { bg = green3 },
 
 		HoltersTitle = { fg = purple3 },
+
+        -- Java
+        ["@lsp.type.class.java"] = { fg = "foam" },
+        ["@lsp.type.interface.java"] = { link = "@lsp.type.class.java" },
+        ["@lsp.type.modifier.java"] = { link = "keyword" },
 	},
 }
