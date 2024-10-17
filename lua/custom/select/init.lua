@@ -8,6 +8,8 @@ local M = {}
 function M.select(items, opts, on_choice)
 	local lines = {}
 	local maxwidth = 0
+    local winWidth = vim.api.nvim_win_get_width(0)
+    local winHeight = vim.api.nvim_win_get_height(0)
 	-- Create the lines from items with format_item and gets max length
 	for _, item in ipairs(items) do
 		local str = opts.format_item(item)
@@ -16,6 +18,11 @@ function M.select(items, opts, on_choice)
 			maxwidth = string.len(str)
 		end
 	end
+    table.insert(lines, "")
+
+    maxwidth = math.min(maxwidth, winWidth -10)
+    local maxheight = math.min(#lines, winHeight -10)
+
 	local buf, win = utils.create_window(true, {
 		win_options = {
 			number = true,
@@ -23,7 +30,7 @@ function M.select(items, opts, on_choice)
 			winhl = "Normal:NormalFloatNC",
 		},
 		width = maxwidth,
-		height = #items,
+		height = #lines,
 		title = opts.prompt or "Select:",
 	})
 
