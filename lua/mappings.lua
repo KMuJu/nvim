@@ -11,7 +11,7 @@ map("n", "<leader>db", "<cmd>bdelete<cr>", "Delete buffer")
 -- save
 map({ "n", "v", "i" }, "<C-s>", "<cmd>w<cr>", "Save")
 
-map("n", "<ESC>", "<cmd>nohl<cr>", "Remove highlights")
+map("n", "<ESC>", "<cmd>nohls<cr>", "Remove highlights")
 
 -- navigation
 map("n", "<C-u>", "<C-u>zz", "Move half page and center")
