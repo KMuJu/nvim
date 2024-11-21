@@ -40,11 +40,4 @@ return {
 			end, "Switch custom colorscheme")
 		end,
 	},
-	{
-		"ellisonleao/gruvbox.nvim",
-		name = "gruvbox",
-		priority = 1000,
-		config = true,
-		opts = ...,
-	},
 }
