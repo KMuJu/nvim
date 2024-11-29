@@ -45,7 +45,6 @@ return {
 		["@markup.list.unchecked.markdown"] = { fg = red2, bold = true },
 		["@markup.list.checked.markdown"] = { fg = gray1, bold = true, blend = 30 },
 		["@markup.list"] = { bg = aqua1, blend = 10, bold = true },
-		["@type.qualifier.java"] = { fg = purple3 },
 		["LspReferenceWrite"] = { bg = gray1, blend = 10 },
 		["LspReferenceRead"] = { bg = gray2, blend = 10 },
 		["LspReferenceText"] = { bg = gray2, blend = 10 },
@@ -55,9 +54,10 @@ return {
 
 		HoltersTitle = { fg = purple3 },
 
-        -- Java
-        ["@lsp.type.class.java"] = { fg = "foam" },
-        ["@lsp.type.interface.java"] = { link = "@lsp.type.class.java" },
-        ["@lsp.type.modifier.java"] = { link = "keyword" },
+		-- Java
+		["@lsp.type.class.java"] = { fg = "foam" },
+		["@lsp.type.interface.java"] = { link = "@lsp.type.class.java" },
+		["@lsp.type.modifier.java"] = { link = "keyword" },
+		["@type.qualifier.java"] = { fg = purple3 },
 	},
 }
