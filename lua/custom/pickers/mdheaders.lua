@@ -27,12 +27,12 @@ local function get_headers(bufnr)
 	for id, node in header:iter_captures(root, bufnr, 0, -1) do
 		local range = { node:range() }
 		local row = range[1]
-		local header = {
+		local h = {
 			line = vim.treesitter.get_node_text(node, bufnr),
 			row = row + 1,
 			id = id,
 		}
-		table.insert(headers, header)
+		table.insert(headers, h)
 	end
 
 	return headers
