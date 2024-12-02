@@ -188,7 +188,6 @@ local M = {
 }
 
 function M.open()
-	-- TODO: If already open, go to that window instead of opening a new one
 	if M.opened and vim.api.nvim_buf_get_name(0) == M.bufname then
 		focus_window(M.buf)
 		return
@@ -198,6 +197,7 @@ function M.open()
 	local orig_buf = vim.api.nvim_get_current_buf()
 	local headers = get_headers(0)
 	---@type Header
+	---@diagnostic disable-next-line: missing-fields
 	local bottom = {
 		text = "END",
 		level = 7,
