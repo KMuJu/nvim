@@ -49,8 +49,8 @@ end
 local function get_headers(bufnr)
 	local root = get_root(bufnr)
 
-	local allHeaders = {}
 	local headers = {}
+	local all_headers = {}
 
 	for _, node in headerQuery:iter_captures(root, bufnr, 0, -1) do
 		local range = { node:range() }
@@ -70,8 +70,8 @@ local function get_headers(bufnr)
 		}
 
 		local child = false
-		for i = #headers, 1, -1 do -- Latest addition will most likely be the parent
-			local hd = headers[i]
+		for i = #all_headers, 1, -1 do -- Latest addition will most likely be the parent
+			local hd = all_headers[i]
 			-- Header cannot be children of smaller headers
 			if hd.level > level and vim.treesitter.is_ancestor(hd.node, h.node) then
 				table.insert(hd.children, h)
@@ -80,14 +80,14 @@ local function get_headers(bufnr)
 			end
 		end
 		if not child then
-			table.insert(allHeaders, h)
+			table.insert(headers, h)
 		end
 
-		table.insert(headers, h)
+		table.insert(all_headers, h)
 		::continue::
 	end
 
-	return allHeaders
+	return headers
 end
 
 ---@param header Header
