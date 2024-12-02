@@ -177,6 +177,9 @@ end
 ---@param buf number
 local function focus_window(buf)
 	local win = find_win(buf)
+	if win == -1 then
+		return
+	end
 	vim.api.nvim_set_current_win(win)
 end
 
