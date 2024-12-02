@@ -225,9 +225,7 @@ function M.open()
 	vim.keymap.set("n", "<cr>", function()
 		local row, _ = unpack(vim.api.nvim_win_get_cursor(0))
 		row = row - 1
-		if row == 0 then
-			return
-		end
+		local line = row ~= 0 and tostring(shown[row].row) or "1"
 		local w = find_win(orig_buf)
 		if w == -1 then -- Did not find window
 			vim.cmd("wincmd l") -- goes to the window to the right
@@ -235,7 +233,7 @@ function M.open()
 		else
 			vim.api.nvim_set_current_win(w)
 		end
-		vim.cmd(tostring(shown[row].row)) -- goes to the line of the header
+		vim.cmd(line) -- goes to the line of the header
 		vim.cmd("normal! zz") -- centers the cursor
 	end, { buffer = true })
 
