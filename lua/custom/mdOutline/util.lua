@@ -9,11 +9,11 @@ function M.split()
 	vim.api.nvim_set_option_value("filetype", name, { buf = buf })
 	vim.api.nvim_set_option_value("swapfile", false, { buf = buf })
 
-	-- TODO: use vim.api.nvim_open_win
-	vim.cmd("aboveleft vsplit")
-	local win = vim.api.nvim_get_current_win()
-	vim.api.nvim_win_set_width(win, 45)
-	vim.api.nvim_set_current_buf(buf)
+	local win = vim.api.nvim_open_win(buf, true, {
+		vertical = true,
+		split = "left",
+		width = 45,
+	})
 	return buf, win
 end
 
