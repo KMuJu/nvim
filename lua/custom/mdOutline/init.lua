@@ -1,14 +1,8 @@
 local util = require("custom.mdOutline.util")
 
+local config = require("custom.mdOutline.config")
+
 local highlight_id = vim.api.nvim_create_namespace("markdownOutline")
-local highlights = {
-	[6] = "@markup.heading.1.markdown",
-	[5] = "@markup.heading.2.markdown",
-	[4] = "@markup.heading.3.markdown",
-	[3] = "@markup.heading.4.markdown",
-	[2] = "@markup.heading.5.markdown",
-	[1] = "@markup.heading.6.markdown",
-}
 
 local function get_root(bufnr)
 	local parser = vim.treesitter.get_parser(bufnr, "markdown", {})
@@ -144,7 +138,7 @@ local function render_headers(buf, headers, title)
 		-- sets the extmark at line i instead of i-1 because of the title
 		vim.api.nvim_buf_set_extmark(buf, highlight_id, i, 0, {
 			end_row = i + 1,
-			hl_group = highlights[h.level],
+			hl_group = config.highlights[h.level],
 		})
 	end
 	return shown
@@ -206,7 +200,7 @@ function M.open()
 		children = {},
 	}
 	table.insert(headers, bottom)
-	local buf, win = util.split()
+	local buf, win = util.split(config)
 	local bufname = vim.api.nvim_buf_get_name(orig_buf)
 	local filename = vim.fn.fnamemodify(bufname, ":t")
 	local shown = render_headers(buf, headers, filename)
