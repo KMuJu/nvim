@@ -17,6 +17,9 @@ local headerQuery = vim.treesitter.query.parse(
 ]]
 )
 
+---@param node TSNode
+---@param bufnr number
+---@return string, number
 local function get_text(node, bufnr)
 	local line = vim.treesitter.get_node_text(node, bufnr)
 	line = string.match(line, "([^\n]*)")

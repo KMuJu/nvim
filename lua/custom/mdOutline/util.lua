@@ -1,5 +1,7 @@
 local M = {}
 
+---@param config OutlineConfig
+---@return number, number
 function M.split(config)
 	local buf = vim.api.nvim_create_buf(false, true)
 	vim.api.nvim_set_option_value("bufhidden", "wipe", { buf = buf })
@@ -16,6 +18,7 @@ function M.split(config)
 	return buf, win
 end
 
+---@param win number
 function M.close(win)
 	vim.api.nvim_win_close(win, true)
 end

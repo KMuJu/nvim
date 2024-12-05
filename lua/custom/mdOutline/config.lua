@@ -1,3 +1,11 @@
+---@class OutlineConfig
+---@field vertical boolean
+---@field split "left"|"right"|"above"|"below"
+---@field width number
+---@field name string
+---@field highlights string[]
+
+---@type OutlineConfig
 return {
 	vertical = true,
 	split = "left",
