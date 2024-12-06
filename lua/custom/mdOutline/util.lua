@@ -1,8 +1,17 @@
 local M = {}
 
+local function check_size(w, h, c_w, c_h)
+	return w - c_w > (h - c_h) * 2
+end
+
 ---@param config OutlineConfig
 ---@return number, number
 function M.split(config)
+	config = config or {}
+	vim.tbl_extend("keep", config, {
+		vertical = true,
+		check_size = check_size,
+	})
 	local buf = vim.api.nvim_create_buf(false, true)
 	vim.api.nvim_set_option_value("bufhidden", "wipe", { buf = buf })
 	vim.api.nvim_set_option_value("buftype", "nofile", { buf = buf })
