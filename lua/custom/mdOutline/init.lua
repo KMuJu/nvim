@@ -151,7 +151,7 @@ end
 ---@param shown Header[]
 ---@param open boolean
 local function open_close_line(win, shown, open)
-	local row, _ = unpack(vim.api.nvim_win_get_cursor(win))
+	local row = vim.api.nvim_win_get_cursor(win)[1]
 	row = row - 1
 	if row == 0 then
 		return
@@ -222,9 +222,9 @@ function M.open()
 		shown = render_headers(buf, headers, filename)
 	end, { buffer = true })
 
-	vim.keymap.set("n", "<cr>", function()
-		local row, _ = unpack(vim.api.nvim_win_get_cursor(0))
-		row = row - 1
+	-- Opens file and goes to the header the cursor is on
+	local function open_file()
+		local row = vim.api.nvim_win_get_cursor(0)[1] - 1 -- 0 is the filename, 1 is the first header
 		local line = row ~= 0 and tostring(shown[row].row) or "1"
 		local w = find_win(orig_buf)
 		if w == -1 then -- Did not find window
@@ -235,12 +235,28 @@ function M.open()
 		end
 		vim.cmd(line) -- goes to the line of the header
 		vim.cmd("normal! zz") -- centers the cursor
-	end, { buffer = true })
+	end
+
+	vim.keymap.set("n", "<cr>", open_file, { buffer = true })
 
 	vim.keymap.set("n", "q", function()
 		util.close(win)
 		M.opened = false
 		M.buf = nil
 	end, { buffer = true })
+
+	vim.keymap.set("n", "J", function()
+		vim.cmd("normal! j")
+		local w = vim.api.nvim_get_current_win()
+		open_file()
+		vim.api.nvim_set_current_win(w)
+	end, { buffer = true })
+	vim.keymap.set("n", "K", function()
+		vim.cmd("normal! k")
+		local w = vim.api.nvim_get_current_win()
+		open_file()
+		vim.api.nvim_set_current_win(w)
+	end, { buffer = true })
 end
+
 return M
