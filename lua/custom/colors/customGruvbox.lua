@@ -1,38 +1,18 @@
 -- GRUVBOX
-local bg--[[          ]] = "#282828"
-local bg0_h--[[       ]] = "#1d2021"
-local bg_dark--[[     ]] = "#101112"
-local fg--[[          ]] = "#ebdbb2"
-local red1--[[        ]] = "#cc241d"
-local red2--[[        ]] = "#fb4934"
-local red3--[[        ]] = "#e83d27"
-local green1--[[      ]] = "#98971a"
-local green2--[[      ]] = "#b8bb26"
-local yellow1--[[     ]] = "#d79921"
-local yellow2--[[     ]] = "#fabd2f"
-local blue1--[[       ]] = "#458588"
-local blue2--[[       ]] = "#83a598"
-local blue3--[[       ]] = "#91b6f2"
-local purple1--[[     ]] = "#b16286"
-local purple2--[[     ]] = "#d3869b"
-local purple3--[[     ]] = "#e38dfc"
-local aqua1--[[       ]] = "#689d6a"
-local aqua2--[[       ]] = "#8ec07c"
-local gray1--[[       ]] = "#a89984"
-local gray2--[[       ]] = "#928374"
+local c = require("custom.colors.color")
 
 local visual = "#a39d83"
 
 local custom = {
 	groups = {
-		background = bg0_h,
-		background_nc = bg0_h,
-		panel = bg0_h,
-		panel_nc = bg0_h,
-		border = fg,
+		background = c.bg0_h,
+		background_nc = c.bg0_h,
+		panel = c.bg0_h,
+		panel_nc = c.bg0_h,
+		border = c.fg,
 		comment = "muted",
-		link = red2,
-		punctuation = gray1,
+		link = c.red2,
+		punctuation = c.gray1,
 
 		error = "love",
 		hint = "iris",
@@ -50,30 +30,30 @@ local custom = {
 	},
 
 	highlight_groups = {
-		ColorColumn = { bg = aqua1 },
+		ColorColumn = { bg = c.aqua1 },
 
 		-- Blend colours against the "base" background
-		CursorLine = { bg = blue1, blend = 40 }, -- Cursorline in neotree
-		StatusLine = { fg = yellow1, bg = yellow2, blend = 10 },
+		CursorLine = { bg = c.blue1, blend = 40 }, -- Cursorline in neotree
+		StatusLine = { fg = c.yellow1, bg = c.yellow2, blend = 10 },
 
 		-- By default each group adds to the existing config.
 		-- If you only want to set what is written in this config exactly,
 		-- you can set the inherit option:
 		Search = { bg = "gold", inherit = false },
-		Function = { fg = blue3 },
+		Function = { fg = c.blue3 },
 		-- local and such
-		Statement = { fg = red1 },
-		Keyword = { fg = red2 },
+		Statement = { fg = c.red1 },
+		Keyword = { fg = c.red2 },
 
 		DiagnosticStatusLineHint = { fg = "love" },
-		Type = { fg = green2 },
-		Variable = { fg = blue1 },
+		Type = { fg = c.green2 },
+		Variable = { fg = c.blue1 },
 		["@field"] = { fg = "foam" },
 		["@property"] = { fg = "foam" },
-		["@parameter"] = { fg = fg, italic = true },
-		["String"] = { fg = green2, bold = false },
-		["DashboardHeader"] = { fg = red2 },
-		["Visual"] = { bg = visual, blend = 45 },
+		["@parameter"] = { fg = c.fg, italic = true },
+		["String"] = { fg = c.green2, bold = false },
+		["DashboardHeader"] = { fg = c.red2 },
+		["Visual"] = { bg = c.visual, blend = 45 },
 	},
 }
 
