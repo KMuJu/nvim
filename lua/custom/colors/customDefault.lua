@@ -7,7 +7,7 @@ return {
 		CursorLine = { bg = c.blue1, blend = 3 }, -- Cursorline in neotree
 
 		-- For non-current windows
-		NormalNC = { bg = c.bg_dark },
+		NormalNC = { bg = c.bg },
 
 		-- Oil directory
 		Directory = { fg = c.blue3, bold = true, italic = true },
