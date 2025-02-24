@@ -10,7 +10,7 @@ M.diag1 = {
 		active = M.signs,
 	},
 	update_in_insert = true,
-	underline = false,
+	underline = true,
 	severity_sort = true,
 	float = {
 		focusable = false,
