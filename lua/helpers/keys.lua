@@ -24,7 +24,7 @@ M.map = function(mode, lhs, rhs, desc)
 	-- else
 	-- 	map = m
 	-- end
-    map = m
+	map = m
 	map(mode, lhs, rhs, desc)
 end
 
@@ -38,7 +38,7 @@ M.lsp_map = function(lhs, rhs, bufnr, desc)
 	-- else
 	-- 	lsp_map = lm
 	-- end
-    lsp_map = lm
+	lsp_map = lm
 	lsp_map(lhs, rhs, bufnr, "LSP: " .. desc)
 end
 

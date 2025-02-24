@@ -6,9 +6,9 @@ vim.opt_local.softtabstop = 2
 
 -- Markdown show header
 vim.keymap.set(
-    "n",
-    "<leader>sj",
-    require("custom.pickers.mdheaders").show_headers,
-    { buffer = true, desc = "Show markdown headers in telescope" }
+	"n",
+	"<leader>sj",
+	require("custom.pickers.mdheaders").show_headers,
+	{ buffer = true, desc = "Show markdown headers in telescope" }
 )
 vim.keymap.set("n", "<leader>sh", require("custom.mdOutline").open, { buffer = true, desc = "Open markdown outline" })

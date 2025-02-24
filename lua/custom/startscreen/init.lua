@@ -62,25 +62,25 @@ M.fillBuf = function(buf)
 	-- 	"██████  ██████ ██████████████ ██████████████ ██████     ██████████████ ██████  ██████████ ██████████████",
 	-- 	"                                                                                                        ",
 	-- }
-    -- https://patorjk.com/software/taag/#p=display&f=Delta%20Corps%20Priest%201&t=Frosty
-    local lines = {
-        "   ▄████████    ▄████████  ▄██████▄     ▄████████     ███     ▄██   ▄   ",
-        "  ███    ███   ███    ███ ███    ███   ███    ███ ▀█████████▄ ███   ██▄ ",
-        "  ███    █▀    ███    ███ ███    ███   ███    █▀     ▀███▀▀██ ███▄▄▄███ ",
-        " ▄███▄▄▄      ▄███▄▄▄▄██▀ ███    ███   ███            ███   ▀ ▀▀▀▀▀▀███ ",
-        "▀▀███▀▀▀     ▀▀███▀▀▀▀▀   ███    ███ ▀███████████     ███     ▄██   ███ ",
-        "  ███        ▀███████████ ███    ███          ███     ███     ███   ███ ",
-        "  ███          ███    ███ ███    ███    ▄█    ███     ███     ███   ███ ",
-        "  ███          ███    ███  ▀██████▀   ▄████████▀     ▄████▀    ▀█████▀  ",
-        "               ███    ███                                               ",
-    }
+	-- https://patorjk.com/software/taag/#p=display&f=Delta%20Corps%20Priest%201&t=Frosty
+	local lines = {
+		"   ▄████████    ▄████████  ▄██████▄     ▄████████     ███     ▄██   ▄   ",
+		"  ███    ███   ███    ███ ███    ███   ███    ███ ▀█████████▄ ███   ██▄ ",
+		"  ███    █▀    ███    ███ ███    ███   ███    █▀     ▀███▀▀██ ███▄▄▄███ ",
+		" ▄███▄▄▄      ▄███▄▄▄▄██▀ ███    ███   ███            ███   ▀ ▀▀▀▀▀▀███ ",
+		"▀▀███▀▀▀     ▀▀███▀▀▀▀▀   ███    ███ ▀███████████     ███     ▄██   ███ ",
+		"  ███        ▀███████████ ███    ███          ███     ███     ███   ███ ",
+		"  ███          ███    ███ ███    ███    ▄█    ███     ███     ███   ███ ",
+		"  ███          ███    ███  ▀██████▀   ▄████████▀     ▄████▀    ▀█████▀  ",
+		"               ███    ███                                               ",
+	}
 
 	local start_row = 0
 	local start_col = 0
 	local win = vim.fn.bufwinid(buf)
 	local width = vim.api.nvim_win_get_width(win)
 	local height = vim.api.nvim_win_get_height(win)
-    local textHeight = vim.fn.strcharlen(lines[1])
+	local textHeight = vim.fn.strcharlen(lines[1])
 	local top = math.floor((height - #lines) / 2)
 	local left = math.floor((width - textHeight) / 2)
 
@@ -129,9 +129,9 @@ local function isSomethingShown()
 	if #listed_buffers > 1 then
 		return true
 	end
-    if vim.bo.filetype ~= '' then
-        return true
-    end
+	if vim.bo.filetype ~= "" then
+		return true
+	end
 	return false
 end
 
