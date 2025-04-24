@@ -23,6 +23,7 @@ return {
 				"python",
 				"rust",
 				"vim",
+				"latex",
 			},
 
 			sync_install = false,

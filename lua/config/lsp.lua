@@ -24,6 +24,7 @@ local servers = {
 			},
 		},
 	},
+	rust_analyzer = {},
 	pyright = {},
 	clangd = {
 		-- cmd = { "clangd", unpack(require("custom.clangd").flags) },
