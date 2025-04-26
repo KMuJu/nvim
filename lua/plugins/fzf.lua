@@ -23,7 +23,6 @@ return {
 		map("n", "<leader>sb", fzf.buffers, "[S]earch [B]uffers")
 		map("n", "<leader>sd", fzf.diagnostics_workspace, "[S]earch [D]iagnostics")
 		map("n", "<leader>sh", fzf.helptags, "[S]earch [H]elp tags")
-		map("n", "<leader><leader>", fzf.buffers, "[S]earch [B]uffers")
 
 		map("n", "<leader>/", fzf.lgrep_curbuf, "[/] Fuzzily sarch in current buffer")
 		map("n", "<leader>sn", function()
