@@ -19,7 +19,7 @@ return {
 					dismiss = "/",
 				},
 			},
-			filetypes = { markdown = true },
+			filetypes = { markdown = false },
 		},
 		config = function(_, opts)
 			local cmp = require("cmp")
