@@ -11,10 +11,8 @@ vim.keymap.set(
 )
 vim.keymap.set("n", "<leader>sh", require("custom.mdOutline").open, { buffer = true, desc = "Open markdown outline" })
 
-local ts_utils = require('nvim-treesitter.ts_utils')
-
 local function is_in_checkbox()
-    local node = ts_utils.get_node_at_cursor()
+    local node = vim.treesitter.get_node()
     if not node then
         return nil
     end
