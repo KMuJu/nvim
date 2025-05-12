@@ -31,6 +31,7 @@ for opt, val in pairs(opts) do
 end
 
 vim.g.ftplugin_sql_omni_key = "<C-j>"
+vim.opt.clipboard:append('unnamedplus')
 
 vim.ui.select = require("custom.select").select
 
