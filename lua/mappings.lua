@@ -8,6 +8,11 @@ map("n", "<leader>pv", "<cmd>Explore<cr>", "Open explore")
 -- close buffer
 map("n", "<leader>db", "<cmd>bdelete<cr>", "Delete buffer")
 
+--tabs
+map("n", "<leader>tn", "<cmd>tabnext<cr>", "Next tab")
+map("n", "<leader>tc", "<cmd>tabnew<cr>", "New tab")
+map("n", "<leader>tx", "<cmd>tabclose<cr>", "Close tab")
+
 -- save
 map({ "n", "v", "i" }, "<C-s>", "<cmd>w<cr>", "Save")
 
