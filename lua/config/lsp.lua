@@ -92,20 +92,15 @@ local servers = {
         },
     },
 }
+
 require("mason").setup()
 require("mason-lspconfig").setup({
     ensure_installed = servers,
-    automatic_installation = true,
+    -- automatic_installation = true,
 })
 
 require("helpers.keys").map("n", "<leader>M", "<cmd>Mason<cr>", "Show Mason")
 
--- Set up cool signs for diagnostics
-local signs = { Error = "E ", Warn = " ", Hint = "H ", Info = " " }
-for type, icon in pairs(signs) do
-    local hl = "DiagnosticSign" .. type
-    vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
-end
 
 -- Diagnostic config
 vim.diagnostic.config(require("custom.functions.diagnostics").diag1)
@@ -122,7 +117,9 @@ for name, config in pairs(servers) do
         capabilities = capabilities,
     }, config)
 
-    lspconfig[name].setup(config)
+    -- lspconfig[name].setup(config)
+    vim.lsp.enable(name)
+    vim.lsp.config(name, config)
 end
 
 local on_attach = function(bufnr, client)

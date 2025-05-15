@@ -7,7 +7,11 @@ M.signs = { Error = "E ", Warn = " ", Hint = "H ", Info = " " }
 M.diag1 = {
 	virtual_text = false,
 	signs = {
-		active = M.signs,
+		-- active = M.signs,
+        [vim.diagnostic.severity.ERROR] = "E ",
+        [vim.diagnostic.severity.WARN] = " ",
+        [vim.diagnostic.severity.INFO] = " ",
+        [vim.diagnostic.severity.HINT] = "H "
 	},
 	update_in_insert = true,
 	underline = true,
@@ -25,7 +29,11 @@ M.diag1 = {
 M.diag2 = {
 	virtual_text = true,
 	signs = {
-		active = M.signs,
+		-- active = M.signs,
+        [vim.diagnostic.severity.ERROR] = "E ",
+        [vim.diagnostic.severity.WARN] = " ",
+        [vim.diagnostic.severity.INFO] = " ",
+        [vim.diagnostic.severity.HINT] = "H "
 	},
 	update_in_insert = true,
 	underline = true,
