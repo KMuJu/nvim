@@ -1,7 +1,7 @@
 return {
 	"stevearc/conform.nvim",
 	-- lazy = true,
-	enabled = false,
+	-- enabled = false,
 	opts = {
 		notify_on_error = false,
 		format_on_save = {
@@ -9,7 +9,7 @@ return {
 			lsp_fallback = true,
 		},
 		formatters_by_ft = {
-			c = { "trim_whitespace" },
+			c = {},
 			lua = { "stylua" },
 			-- Conform can also run multiple formatters sequentially
 			python = { "isort", "black" },
