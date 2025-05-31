@@ -210,6 +210,25 @@ function M.open()
 	M.buf = buf
 	M.bufname = bufname
 
+	local function reload()
+		headers = get_headers(0)
+		bottom.row = #vim.api.nvim_buf_get_lines(orig_buf, 0, -1, true)
+		table.insert(headers, bottom)
+		shown = render_headers(buf, headers, filename)
+	end
+
+	-- Reloads the outline when the original buffer is written to
+	vim.api.nvim_create_autocmd("BufWritePost", {
+		buffer = orig_buf,
+		callback = reload,
+	})
+
+	-- Reloads the outline when buf is focused
+	vim.api.nvim_create_autocmd("BufEnter", {
+		buffer = buf,
+		callback = reload,
+	})
+
 	vim.keymap.set("n", "l", function()
 		open_close_line(win, shown, true) -- set header below cursor to be closed
 		shown = render_headers(buf, headers, filename) -- rerender the headers
