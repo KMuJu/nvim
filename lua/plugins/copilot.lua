@@ -3,6 +3,7 @@ return {
 		"zbirenbaum/copilot.lua",
 		cmd = "Copilot",
 		event = "InsertEnter",
+		enabled = false,
 		opts = {
 			-- I don't find the panel useful.
 			panel = { enabled = false },
