@@ -45,21 +45,14 @@ local servers = {
 	cmake = {},
 	bashls = {},
 	ocamllsp = {
+		cmd = { "ocamllsp" },
 		settings = {
 			codelens = { enable = true },
 			inlayHints = { enable = true },
 			syntaxDocumentation = { enable = true },
 		},
-		cmd = { "ocamllsp" },
-		filetypes = { "ocaml", "ocaml.menhir", "ocaml.interface", "ocaml.ocamllex", "reason", "dune" },
-		root_dir = lsp.util.root_pattern(
-			"*.opam",
-			"esy.json",
-			"package.json",
-			".git",
-			"dune-project",
-			"dune-workspace"
-		),
+
+		server_capabilities = { semanticTokensProvider = false },
 	},
 
 	jdtls = {
