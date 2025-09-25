@@ -128,6 +128,7 @@ local on_attach = function(bufnr, client)
 	lsp_map("gI", vim.lsp.buf.implementation, bufnr, "Goto Implementation")
 	lsp_map("K", vim.lsp.buf.hover, bufnr, "Hover Documentation")
 	lsp_map("gD", vim.lsp.buf.declaration, bufnr, "Goto Declaration")
+	vim.keymap.set("i", "<C-Space>", vim.lsp.buf.signature_help, { desc = "Signature help", buffer = bufnr })
 
 	-- Inlay hints
 	lsp_map("<leader>lh", function()
