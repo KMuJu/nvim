@@ -26,7 +26,7 @@ return {
 		DiffDelete = { bg = c.yellow3 },
 		DiffAdd = { bg = c.green3 },
 
-		HoltersTitle = { fg = c.purple3 },
+		KMuJuTitle = { fg = c.purple3 },
 
 		-- Java
 		["@lsp.type.class.java"] = { fg = "foam" },

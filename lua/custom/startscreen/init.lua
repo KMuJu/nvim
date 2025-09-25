@@ -1,6 +1,6 @@
 local M = {}
 
-local name = "Holters"
+local name = "KMuJu"
 local highlight_id = vim.api.nvim_create_namespace(name)
 M.name = name
 
