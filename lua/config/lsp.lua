@@ -88,9 +88,14 @@ local servers = {
 }
 
 require("mason").setup()
+-- WARNING: This will automatically enable all lsp's installed through mason
+-- This kind of makes the loop further down useless
+-- rust_analyzer is excluded since rustaceanvim will start it
 require("mason-lspconfig").setup({
 	ensure_installed = servers,
-	-- automatic_installation = true,
+	automatic_enable = {
+		exclude = { "rust_analyzer" },
+	},
 })
 
 require("helpers.keys").map("n", "<leader>M", "<cmd>Mason<cr>", "Show Mason")
