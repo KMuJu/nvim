@@ -12,7 +12,8 @@ function M.select(items, opts, on_choice)
 	local winHeight = vim.api.nvim_win_get_height(0)
 	-- Create the lines from items with format_item and gets max length
 	for _, item in ipairs(items) do
-		local str = opts.format_item(item)
+		local str = opts.format_item and opts.format_item(item)
+			or (type(item) == "string" and item or "<not string and no format>")
 		table.insert(lines, str)
 		if maxwidth < string.len(str) then
 			maxwidth = string.len(str)
