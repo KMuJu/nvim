@@ -19,13 +19,13 @@ return {
 				end, "Step over line")
 				map("n", "<leader>si", function()
 					dap.step_into()
-				end, "Step over line")
+				end, "Step into line")
 				map("n", "<leader>su", function()
 					dap.step_out()
-				end, "Step over line")
+				end, "Step out")
 				map("n", "<leader>sc", function()
 					dap.continue()
-				end, "Step over line")
+				end, "Continue")
 			end
 			dap.listeners.before.event_terminated["dapui_config"] = function()
 				dapui.close()
@@ -33,6 +33,7 @@ return {
 			dap.listeners.before.event_exited["dapui_config"] = function()
 				dapui.close()
 			end
+			map("n", "<leader>bp", "<cmd> DapToggleBreakpoint <CR>", "Create breakpoint")
 		end,
 	},
 	{
@@ -47,7 +48,6 @@ return {
 			require("dap-python").setup(path)
 			-- require("core.utils").load_mappings("dap_python")
 			local map = require("helpers.keys").map
-			map("n", "<leader>bp", "<cmd> DapToggleBreakpoint <CR>", "Create breakpoint")
 			map("n", "<leader>br", function()
 				require("dap-python").test_method()
 			end, "Run debugpy")
