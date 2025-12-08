@@ -211,22 +211,25 @@ function M.open()
 	M.bufname = bufname
 
 	local function reload()
-		headers = get_headers(0)
+		headers = get_headers(orig_buf)
 		bottom.row = #vim.api.nvim_buf_get_lines(orig_buf, 0, -1, true)
 		table.insert(headers, bottom)
 		shown = render_headers(buf, headers, filename)
 	end
 
+	local outline_augroup = vim.api.nvim_create_augroup("OutlineManager_" .. buf, { clear = true })
 	-- Reloads the outline when the original buffer is written to
 	vim.api.nvim_create_autocmd("BufWritePost", {
 		buffer = orig_buf,
 		callback = reload,
+		group = outline_augroup,
 	})
 
 	-- Reloads the outline when buf is focused
 	vim.api.nvim_create_autocmd("BufEnter", {
 		buffer = buf,
 		callback = reload,
+		group = outline_augroup,
 	})
 
 	vim.keymap.set("n", "l", function()
@@ -262,6 +265,7 @@ function M.open()
 		util.close(win)
 		M.opened = false
 		M.buf = nil
+		vim.api.nvim_del_augroup_by_id(outline_augroup)
 	end, { buffer = true })
 
 	vim.keymap.set("n", "J", function()
@@ -270,6 +274,7 @@ function M.open()
 		open_file()
 		vim.api.nvim_set_current_win(w)
 	end, { buffer = true })
+
 	vim.keymap.set("n", "K", function()
 		vim.cmd("normal! k")
 		local w = vim.api.nvim_get_current_win()
