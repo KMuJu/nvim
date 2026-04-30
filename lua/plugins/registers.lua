@@ -1,5 +1,5 @@
 return {
-	"tversteeg/registers.nvim",
+	"https://codeberg.org/fosk/registers.nvim",
 	cmd = "Registers",
 	config = function()
 		local registers = require("registers")

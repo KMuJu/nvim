@@ -1,8 +1,3 @@
-local status, lsp = pcall(require, "lspconfig")
-if not status then
-	return
-end
-
 local servers = {
 	lua_ls = {
 		settings = {
@@ -137,7 +132,7 @@ local on_attach = function(bufnr, client)
 
 	-- Inlay hints
 	lsp_map("<leader>lh", function()
-		lsp.inlay_hint.enable(0, not lsp.inlay_hint.is_enabled())
+		vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
 	end, bufnr, "Toggle inline [H]ints")
 
 	-- Create a command `:Format` local to the LSP buffer
@@ -148,8 +143,10 @@ local on_attach = function(bufnr, client)
 	lsp_map("<leader>ff", "<cmd>Format<cr>", bufnr, "Format")
 	require("helpers.keys").map("v", "<leader>fv", vim.lsp.buf.format, "Format selection")
 
-	vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {
-		border = "rounded",
+	vim.lsp.config("*", {
+		hover = {
+			border = "rounded",
+		},
 	})
 
 	-- Attach and configure vim-illuminate

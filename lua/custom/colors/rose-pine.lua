@@ -40,5 +40,12 @@ return {
 		-- you can set the inherit option:
 		Search = { bg = "gold", inherit = false },
 		NormalNC = { bg = bg_light },
+		["@lsp.type.selfKeyword.rust"] = { link = "@variable.builtin" },
+		-- ["@lsp.mod.mutable.rust"] = { link = "@variable.builtin" },
+		-- ["@lsp.mod.reference.rust"] = { link = "@variable.builtin" },
+		["@lsp.typemod.selfKeyword.mutable.rust"] = { link = "@variable.builtin" },
+		["@lsp.typemod.selfKeyword.reference.rust"] = { link = "@variable.builtin" },
+		["@lsp.typemod.const.constant.rust"] = { link = "@constant" },
+		["@lsp.typemod.const.declaration.rust"] = { link = "@constant" },
 	},
 }
