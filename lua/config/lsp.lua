@@ -125,7 +125,7 @@ local on_attach = function(bufnr, client)
 
 	lsp_map("gd", vim.lsp.buf.definition, bufnr, "Goto Definition")
 	lsp_map("gr", require("fzf-lua").lsp_references, bufnr, "Goto References")
-	lsp_map("gI", vim.lsp.buf.implementation, bufnr, "Goto Implementation")
+	lsp_map("gI", require("fzf-lua").lsp_implementations, bufnr, "Goto Implementation")
 	lsp_map("K", vim.lsp.buf.hover, bufnr, "Hover Documentation")
 	lsp_map("gD", vim.lsp.buf.declaration, bufnr, "Goto Declaration")
 	vim.keymap.set("i", "<C-Space>", vim.lsp.buf.signature_help, { desc = "Signature help", buffer = bufnr })
