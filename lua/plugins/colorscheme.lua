@@ -1,4 +1,4 @@
-local colors = require("custom.colors.init")
+local colors = require("custom.colors.rose-pine")
 
 return {
 	{
@@ -6,8 +6,8 @@ return {
 		name = "rose-pine",
 		priority = 70,
 		config = function()
-			local groups = colors.custom.groups
-			local highlight_groups = colors.custom.highlight_groups
+			local groups = colors.groups
+			local highlight_groups = colors.highlight_groups
 			require("rose-pine").setup({
 				--- @usage 'auto'|'main'|'moon'|'dawn'
 				variant = "moon",
@@ -27,17 +27,12 @@ return {
 				-- https://github.com/rose-pine/neovim/wiki/Recipes
 				highlight_groups = highlight_groups,
 			})
-
-			local map = require("helpers.keys").map
-			map("n", "<leader>cs", function()
-				-- This updates rose-pine and sets colorscheme
-				-- Breaks nvim-colorizer for some reason
-				colors.switch()
-				vim.cmd("Lazy reload rose-pine")
-				vim.cmd.colorscheme(require("helpers.theme"))
-				-- vim.cmd("Lazy reload nvim-colorizer.lua")
-				print("Switched colors")
-			end, "Switch custom colorscheme")
 		end,
+	},
+	{
+		"folke/tokyonight.nvim",
+		lazy = false,
+		priority = 1000,
+		opts = {},
 	},
 }
