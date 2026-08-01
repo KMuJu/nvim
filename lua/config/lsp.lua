@@ -149,6 +149,10 @@ local on_attach = function(bufnr, client)
 		},
 	})
 
+	if client.server_capabilities.documentSymbolProvider then
+		require("nvim-navic").attach(client, bufnr)
+	end
+
 	-- Attach and configure vim-illuminate
 	require("illuminate").on_attach(client)
 end

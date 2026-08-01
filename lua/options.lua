@@ -1,5 +1,5 @@
 local opts = {
-    winborder = 'rounded',
+	winborder = "rounded",
 	shiftwidth = 4,
 	tabstop = 4,
 	expandtab = true,
@@ -31,7 +31,8 @@ for opt, val in pairs(opts) do
 end
 
 vim.g.ftplugin_sql_omni_key = "<C-j>"
-vim.opt.clipboard:append('unnamedplus')
+vim.opt.clipboard:append("unnamedplus")
+vim.o.winbar = "%{%v:lua.require'nvim-navic'.get_location()%}"
 
 vim.ui.select = require("custom.select").select
 
